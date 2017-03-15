@@ -1,0 +1,66 @@
+
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="<%# loginUser['image_url'] %>" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <p><%# loginUser['name'] %></p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+
+
+        <li>
+            <a href="#" class="clickAction" data-action-class='' data-action="" data-action-id="">
+                <i class="fa fa-th"></i> <span>Dashboard</span>
+            </a>
+        </li>
+        
+        <li class="treeview">
+            <a href="#">
+                <i class="fa <%# iconOnView %>"></i> <span>User</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/admin/users" ><i class="fa fa-circle-o text-aqua"></i>Show </a></li>
+                <li class="active"><a href="/admin/users/add" ><i class="fa fa-circle-o text-green"></i>Add </a></li>            
+            </ul>
+        </li>
+        
+        <li class="treeview">
+            <a href="#">
+                <i class="fa <%# iconOnView %>"></i> <span>Categories</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/admin/categories" ><i class="fa fa-circle-o text-aqua"></i>Show </a></li>
+                <li class="active"><a href="/admin/categories/add" ><i class="fa fa-circle-o text-green"></i>Add </a></li>            
+            </ul>
+        </li>
+        
+        <li class="treeview">
+            <a href="#">
+                <i class="fa <%# iconOnView %>"></i> <span>Listing</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/admin/listings" ><i class="fa fa-circle-o text-aqua"></i>Show </a></li>
+                <li class="active"><a href="/admin/listings/add" ><i class="fa fa-circle-o text-green"></i>Add </a></li>            
+            </ul>
+        </li>
+        
+    </ul>
+</section>
+<!-- /.sidebar -->

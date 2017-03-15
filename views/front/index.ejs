@@ -1,0 +1,186 @@
+<div class="map-wrapper">
+    <div id="map1" class="map">
+    </div><!-- /.map -->
+
+    <div class="map-filter-horizontal">
+        <div class="container">
+            <form method="post" action="http://html.realsite.byaviators.com/headers-google-map.html?">
+                <div class="row">
+                    <!--                    <div class="form-group col-sm-3">
+                                            <input type="text" class="form-control" placeholder="Keyword">
+                                        </div> /.form-group -->
+
+                    <div class="form-group col-sm-3">
+                        <select class="categoryAll" name="category" >
+                            <option value='' > Select Category</option>
+                            <% data.forEach(function(results){ %>
+                            <option value="<%= results.id %>" ><%= results.category_name %></option>
+                            <% }); %>
+
+                        </select>
+                    </div><!-- /.form-group -->
+
+                    <!--                    <div class="form-group col-sm-3">
+                                            <select name="contract">
+                                                <option>Contract</option>
+                                                <option>Rent</option>
+                                                <option>Sale</option>
+                                            </select>
+                                        </div> /.form-group 
+                    
+                                        <div class="form-group col-sm-3">
+                                            <select name="location">
+                                                <option>Location</option>
+                                                <option>Kensal</option>
+                                                <option>Braymer</option>
+                                                <option>Horton Bay</option>
+                                                <option>Laurel Run</option>
+                                                <option>Estherville</option>
+                                                <option>Millhousen</option>
+                                                <option>Allegan</option>
+                                                <option>Florala</option>
+                                                <option>Dundarrach</option>
+                                                <option>Neligh</option>
+                                                <option>Roseboro</option>
+                                                <option>Mount Pleasant</option>
+                                                <option>Moro</option>
+                                                <option>Strathmoor Village</option>
+                                                <option>Mabton</option>
+                                                <option>Loup City</option>
+                                                <option>Wolverine</option>
+                                                <option>San Leandro</option>
+                                                <option>Dunwoody</option>
+                                                <option>Battle Ground</option>
+                                                <option>Hanson</option>
+                                                <option>Reedley</option>
+                                                <option>Bayshore</option>
+                                                <option>Tupelo</option>
+                                                <option>Lone Pine</option>
+                                            </select>
+                                        </div> /.form-group -->
+                </div><!-- /.row -->
+            </form>
+        </div><!-- /.container -->
+    </div><!-- /.map-filter-horizontal -->
+</div>
+
+<script>
+
+    var jsonListing = <%- JSON.stringify(data) %> ;
+            var markers = [];
+    var map;
+    function setMapObj() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+//            center: {lat: -34.397, lng: 150.644},
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+    }
+
+    function initMap() {
+
+        setMapObj();
+
+//        var infowindow = new google.maps.InfoWindow({
+//            content: '<div class="marker ' + 'color' + '"><img src="/front/img/house.png" alt=""></div>'
+//        });
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+//                infoWindow.setPosition(pos);
+//                infoWindow.setContent('Location found.');
+                map.setCenter(pos);
+                addMarker(pos, 1);
+//                var marker = new google.maps.Marker({
+//                    position: pos,
+//                    map: map,
+//                    draggable: true,
+//                    title: 'You are here'
+//                });
+//                document.getElementById("lat").value = pos.lat;
+//                document.getElementById("lng").value = pos.lng;
+//
+//                google.maps.event.addListener(marker, 'drag', function (event) {
+//                    document.getElementById("lat").value = event.latLng.lat();
+//                    document.getElementById("lng").value = event.latLng.lng();
+//                });
+                
+//                marker.addListener('click', function() {
+//                    infowindow.open(map, marker);
+//                  });
+                
+
+            }, function () {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            console.log('Browser doesnt support Geolocation');
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+    }
+
+    $(document).on('change', '.categoryAll', function () {
+        var selectId = $(this).val();
+        setMapOnAll(null);
+        markers = [];
+        $.each(jsonListing, function (key, data) {
+
+            if (selectId == data.id) {
+
+                $.each(data.Listings, function (i, value) {
+                    var myLatlng = new google.maps.LatLng(value.lat, value.lng);
+                    addMarker(myLatlng);
+                });
+            }
+        });
+
+
+    });
+    // Adds a marker to the map and push to the array.
+    function addMarker(location, userlocation) {
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+//            marker_content: '<div class="marker ' + 'color' + '">grggrtg<img src="/front/img/house.png" alt=""></div>',
+//            content: '<div class="infobox ' + 'color' + ' "><a class="infobox-image" href=""><img src="assets/img/tmp/1-small.png" alt=""></a><div class="infobox-content"><div class="infobox-content-title"><a href="#">Madison Street 322</a></div><div class="infobox-content-price">$ 230,000</div><div class="infobox-content-body">Integer sit amet nibh erat. Maecenas accumsan nibh at porta euismod.</div></div><div class="infobox-contact"><div class="infobox-contact-title"><a href="#">John Doe</a></div><div class="infobox-contact-body">Effectivity Real Estate<br>Wardrobe Street 90210<br><i class="fa fa-phone"></i>012-123-456</div><a href="#" class="close"><i class="fa fa-close"></i></a></div></div>',
+            icon: '/front/img/map-icon/MapMarker_Bubble_Pink.png'
+        });
+        var infowindow = new google.maps.InfoWindow({
+//            content: '<div class="infobox red"><a class="infobox-image" href=""><img src="/front/img/tmp/1-small.png" alt=""></a><div class="infobox-content"><div class="infobox-content-title"><a href="#">Madison Street 322</a></div><div class="infobox-content-price">$ 230,000</div><div class="infobox-content-body">Integer sit amet nibh erat. Maecenas accumsan nibh at porta euismod.</div></div><div class="infobox-contact"><div class="infobox-contact-title"><a href="#">John Doe</a></div><div class="infobox-contact-body">Effectivity Real Estate<br>Wardrobe Street 90210<br><i class="fa fa-phone"></i>012-123-456</div><a href="#" class="close"><i class="fa fa-close"></i></a></div></div>',
+            content: '<div class="infobox-content"><div class="infobox-content-title"><a href="#">Madison Street 322</a></div><div class="infobox-content-body">Integer sit amet nibh erat. Maecenas accumsan nibh at porta euismod.</div></div>',
+            styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"labels.text.fill","stylers":[{"color":"#b43b3b"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"lightness":"8"},{"color":"#bcbec0"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5b5b5b"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7cb3c9"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#abb9c0"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#fff1f1"},{"visibility":"off"}]}]
+        });
+        
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+                  
+        if (!userlocation) {
+            markers.push(marker);
+        }
+    }
+
+    // Sets the all markers in the map from array OR remove markers from the map.
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrmOorgnrO-3CiDpF68S0-SB6h03_6NjA&callback=initMap">
+</script>

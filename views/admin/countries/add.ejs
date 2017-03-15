@@ -1,0 +1,203 @@
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"></h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id='formSubmit' name='' method='post' action='create' enctype="multipart/form-data">
+                    <div class="box-body">
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">First Name</label>
+
+                            <input type="text" class="form-control" id="first_name" placeholder="Enter Role Name" name='first_name' 
+                                   value=''>
+								   <lable class="error_mgs_lable" id="first_name_error"></lable>
+
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Middle Name</label>
+                            <input type="text" class="form-control" id="middle_name" placeholder="Middle Name" name='middle_name' 
+                                   value=''>
+								   <lable class="error_mgs_lable" id="middle_name_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" placeholder="Last Name" name='last_name' 
+                                   value=''>
+								   <lable class="error_mgs_lable" id="last_name_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email" name='email' 
+                                   value=''>
+								   <lable class="error_mgs_lable" id="email_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Mobile</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="Mobile" name='mobile' 
+                                   value=''>
+								   <lable class="error_mgs_lable" id="mobile_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Residence Address</label>
+                            <input type="text" class="form-control" id="residence_address" placeholder="Residence Address" name='residence_address' 
+                                   value=''>
+								   <lable class="error_mgs_lable" id="residence_address_error"></lable>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label >Country<em>*</em></label>
+                            <select class="form-control select2" name="country_id" id="country_id">
+                                <option value>--Please Select--</option>
+                                <% for(var i=0; i < results.countries.length; i++) { %>
+                                <option value="<%= results.countries[i]['id'] %>" ><%= results.countries[i]['country_name'] %></option>
+                            <% } %>
+                        </select>
+                        <lable class="error_mgs_lable" id="country_id_error"></lable>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">State<em>*</em></label>
+                        <select class="form-control select2" name="state_id" id="state_id">
+                            <option value="">--Please Select--</option>
+
+                            <% if(typeof states !== 'undefined'){ %>
+                            <% for(var i=0; i < states.length; i++) { %>
+                            <option value="<%= states[i]['id'] %>" <% if(data.state_id == states[i]['id']){ %>selected<% } %>>
+                                    <%= states[i]['state_name'] %>
+                        </option>
+                        <% } %>
+                        <% } %>
+                    </select>
+                    <lable class="error_mgs_lable" id="state_id_error"></lable>
+                </div>
+
+                <div class="form-group  col-md-6">
+                    <label for="exampleInputEmail1">District<em>*</em></label>
+                    <select class="form-control select2" name="district_id" id="district_id">
+                        <option value="">--Please Select--</option>
+
+                        <% if(typeof districts !== 'undefined'){ %>
+                        <% for(var i=0; i < districts.length; i++) { %>
+                        <option value="<%= districts[i]['id'] %>" <% if(data.district_id == districts[i]['id']){ %>selected<% } %>>
+                                <%= districts[i]['district_name'] %>
+                    </option>
+                    <% } %>
+                    <% } %>
+                </select>
+                <lable class="error_mgs_lable" id="district_id_error"></lable>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">Tehsil<em>*</em></label>
+                <select class="form-control select2" name="tehsil_id" id="tehsil_id">
+                    <option value="">--Please Select--</option>
+
+                    <% if(typeof tehsils !== 'undefined'){ %>
+                    <% for(var i=0; i < tehsils.length; i++) { %>
+                    <option value="<%= tehsils[i]['id'] %>" <% if(data.tehsil_id == tehsils[i]['id']){ %>selected<% } %>>
+                            <%= tehsils[i]['tehsil_name'] %>
+                </option>
+                <% } %>
+                <% } %>
+            </select>
+            <lable class="error_mgs_lable" id="tehsil_id_error"></lable>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">Block<em>*</em></label>
+            <select class="form-control select2" name="block_id" id="block_id">
+                <option value="">--Please Select--</option>
+
+                <% if(typeof blocks !== 'undefined'){ %>
+                <% for(var i=0; i < blocks.length; i++) { %>
+                <option value="<%= blocks[i]['id'] %>" <% if(data.block_id == blocks[i]['id']){ %>selected<% } %>>
+                        <%= tehsils[i]['block_name'] %>
+            </option>
+            <% } %>
+            <% } %>
+        </select>
+        <lable class="error_mgs_lable" id="block_id_error"></lable>
+    </div>
+
+    <div class="form-group col-md-12">
+        <label for="exampleInputEmail1">Govt. ID Type</label>
+        <select class="form-control select2" name="govt_identity_type_id" id="govt_identity_type_id">
+            <option value="">--Please Select--</option>
+
+            <% if(typeof govt_identity_types !== 'undefined'){ %>
+            <% for(var i=0; i < govt_identity_types.length; i++) { %>
+            <option value="<%= govt_identity_types[i]['id'] %>" <% if(data.govt_identity_type_id == govt_identity_types[i]['id']){ %>selected<% } %>>
+                    <%= govt_identity_types[i]['govt_identity_name'] %>
+        </option>
+        <% } %>
+        <% } %>
+    </select>
+	<lable class="error_mgs_lable" id="govt_identity_type_iderror"></lable>
+</div>
+<div class="form-group col-md-12">
+    <label for="exampleInputEmail1">ID Number</label>
+    <input type="text" class="form-control" id="govt_identity_Number" placeholder="ID Number" name='govt_identity_Number' 
+           value=''>
+		   <lable class="error_mgs_lable" id="govt_identity_Number_error"></lable>
+</div>
+<div class="form-group col-md-12">
+    <label for="exampleInputEmail1">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" name='password' 
+           value=''>
+		   <lable class="error_mgs_lable" id="password_error"></lable>
+</div>
+<div class="form-group col-md-12">
+    <label for="exampleInputEmail1">Confirm Password</label>
+    <input type="password" class="form-control" id="password_confirm" placeholder="Confirm Password" name='password_confirm' 
+           value=''>
+		   <lable class="error_mgs_lable" id="password_confirm_error"></lable>
+</div>
+<div class="form-group col-md-12">
+    <label for="exampleInputEmail1">Role<em>*</em></label>
+    <select class="form-control select2" name="role_id" id="role_id">
+        <option value="">--Please Select--</option>
+
+        <% if(typeof results.roles !== 'undefined'){ %>
+        <% for(var i=0; i < results.roles.length; i++) { %>
+        <option value="<%= results.roles[i]['id'] %>" >
+                <%= results.roles[i]['role_name'] %>
+		</option>
+    <% } %>
+    <% } %>
+</select>
+<lable class="error_mgs_lable" id="role_id_error"></lable>
+</div>
+<div class="form-group col-md-12">
+    <label for="exampleInputEmail1">Upload Profile Image</label>
+    <input type="file" class="form-control" id="image_url" placeholder="Select Role" name='image_url' value=''>
+	<lable class="error_mgs_lable" id="image_url_error"></lable>
+</div>
+
+<div class="form-group col-md-12">
+    <div class="checkbox">
+        <label>                           
+            <input type="checkbox" name="is_active"  id="is_active" value='1' checked >Status
+        </label>
+    </div>
+</div>
+
+</div>
+<!-- /.box-body -->
+
+<div class="box-footer">
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button onclick="return false;" type="submit" class="btn btn-primary">Cancel</button>
+</div>
+</form>
+</div>
+<!-- /.box -->
+
+
+<!-- /.box -->
+
+</div>
+</div>
+</section>

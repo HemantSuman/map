@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../element/head.ejs %>
+        <% include ../element/css.ejs %>
+    </head>
+    <body class="hold-transition <%= site.theme %>">
+        <div class="wrapper">
+
+            <header class="main-header">
+
+                <% include ../element/header.ejs %>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <% include ../element/sidebar.ejs %>
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <%-body %>     
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <% include ../element/footer.ejs %>
+            </footer>
+
+            <!-- Control Sidebar -->
+            <span>
+                <%# include ../element/control_sidebar.ejs %>
+            </span>
+
+        </div>
+        <!-- ./wrapper -->
+
+        <% include ../element/js.ejs %>
+        <script>
+            $(function(){
+                <% if (messages.type_messages){ %>
+                    bootstrapNotify.showMessage('<%= messages.messages %>', '<%= messages.type_messages %>');
+                <% } %>
+            });
+
+        </script>
+        <%- script %>
+    </body>
+</html>

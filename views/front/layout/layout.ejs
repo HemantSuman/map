@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <% include ../element/css.ejs %>
+        <% include ../element/head.ejs %>
+    </head>
+
+    <body>
+
+        <div class="page-wrapper">
+            <div class="header header-standard">
+                <!-- /.header-topbar -->
+
+                <% include ../element/top-bar %>
+                <%# include ../element/header %>
+            </div><!-- /.header-->
+
+            <div class="main">
+                <%- body %>
+                <!-- /.map-wrapper -->
+               
+            </div><!-- /.main -->
+
+<!--            <div id="footer" class="footer">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="footer-top-inner">
+                            <nav>
+                                <ul class="nav nav-pills">
+                                    <li><a href="headers-google-map.html#">Home</a></li>
+                                    <li><a href="headers-google-map.html#">Properties</a></li>
+                                    <li><a href="headers-google-map.html#">Agencies</a></li>
+                                    <li><a href="headers-google-map.html#">Agents</a></li>
+                                    <li><a href="headers-google-map.html#">Pricing</a></li>
+                                    <li><a href="headers-google-map.html#">Blog</a></li>
+                                    <li><a href="headers-google-map.html#">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div> /.footer-top-inner 
+                    </div> /.container 
+                </div> /.footer-top 
+
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="footer-bottom-inner">
+                            <div class="footer-bottom-left">
+                                &copy; 2015 Realsite - Material Real Estate Template. All rights reserved.
+                            </div> /.footer-bottom-left 
+
+                            <div class="footer-bottom-right">
+                                Created by <a href="http://byaviators.com">Aviators</a>
+                            </div> /.footer-bottom-right 
+                        </div> /.footer-bottom-inner 
+                    </div> /.container 
+                </div> /.footer-bottom 
+            </div> /.footer -->
+        </div><!-- /.page-wrapper-->
+        <% include ../element/js.ejs %>
+        
+        <script>
+            $(function(){
+                <% if (messages.type_messages_front){ %>
+                    bootstrapNotify.showMessage('<%= messages.messages_front %>', '<%= messages.type_messages_front %>');
+                <% } %>
+            });
+
+        </script>
+        <%- script %>
+
+    </body>
+
+</html>

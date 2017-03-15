@@ -1,0 +1,81 @@
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"></h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id='formSubmit' name='' method='post' action='create' enctype="multipart/form-data">
+                    <input type="hidden" name='image_path' value='public/uploads/users'>
+                    <div class="box-body">
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Name</label>
+
+                            <input type="text" class="form-control" id="name" placeholder="Enter Name" name='name' value=''>
+                            <lable class="error_mgs_lable" id="name_error"></lable>
+
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email" name='email' value=''>
+                            <lable class="error_mgs_lable" id="email_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name='password' value=''>
+                            <lable class="error_mgs_lable" id="password_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+                            <input type="password" class="form-control" id="password_confirm" placeholder="Confirm Password" name='password_confirm' value=''>
+                            <lable class="error_mgs_lable" id="password_confirm_error"></lable>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="exampleInputEmail1">Role<em>*</em></label>
+                            <select class="form-control select2" name="role_id" id="role_id">
+                                <option value="">--Please Select--</option>
+
+                                <% if(typeof results.roles !== 'undefined'){ %>
+                                    <% results.roles.forEach(function(value, index){  %>
+                                        <option value="<%= value.id %>" ><%= value.role_name %></option>
+                                    <% });  %>
+                            <% } %>
+                        </select>
+                        <lable id="role_id_error"></lable>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="exampleInputEmail1">Upload Profile Image</label>
+                        <input type="file" class="form-control" id="profile_image" placeholder="Select Role" name='profile_image' value=''>
+
+                        <lable class="error_mgs_lable" id="profile_image_error"></lable>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <div class="checkbox">
+                            <label>                           
+                                <input type="checkbox" name="is_active"  id="is_active" value='1' checked >Status
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button onclick="return false;" type="submit" class="btn btn-primary">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.box -->
+
+
+        <!-- /.box -->
+
+    </div>
+</div>
+</section>

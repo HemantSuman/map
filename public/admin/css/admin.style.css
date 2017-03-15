@@ -1,0 +1,38 @@
+.errorMsg {color: #D8000C;}
+.alert-dismissable .close, .alert-dismissible .close {
+    color: inherit;
+    position: relative;
+    right: 0 !important;
+    top: -2px;
+}
+.alert .close {
+    opacity: 0.9 !important;
+}
+
+.tutorImg{ margin:0 auto; width:80px; height:80px; border-radius:100%; overflow:hidden}
+.tutorImg img{ width: 80px; height: 80px}
+.NotificationBlock{ padding:15px; border-bottom:1px solid #d4d4d4;position:relative}
+.box-body .NotificationBlock:last-child{border-bottom:none}
+.box-body .NotificationBlock:nth-child(odd){ background:#f7f7f7}
+.NFImg + span{ color:#3f6aa3; font-size:14px; display:block; text-align:center; font-weight: bold}
+
+.NFDetail div.NfTtile{ font-size:15px; margin-bottom:10px;color:#232323;}
+.NFDetail .Nfby, .NFDetail .NfDate{ font-size:14px; color:#8b8b8b;}
+.NFDetail .Nfby span{color:#6281b0}
+
+.nfBtns > div{ display:inline-block}
+.nfBtns > div a{ display:block; text-align:center; min-width:140px; padding:10px 0; text-transform:capitalize; color:#fff;border-radius:4px; font-size:14px; transition:all .5s ease-in-out; line-height:100%;}
+.nfBtns > div a.confBtn{ background:#dc4e41; margin-right:10px}
+.nfBtns > div a.DeltBtn{ background:#8b8b8b}
+.nfBtns > div a.confBtn:hover{background:#8b8b8b}
+.nfBtns > div a.DeltBtn:hover{background:#dc4e41}
+.NFTime{ text-align:center; color:#7e7e7e; font-size:13px; padding:10px 20px 0 0}
+.NotificationBlock .clsbtn{ position:absolute; top:0; right:0;}
+.NotificationBlock .clsbtn a{ background:#e6e6e6; color:#474747; padding:7px 10px; display:block; line-height:100%;}
+
+.custom-label.label-success {
+    margin: 2px 4px;
+    display: inline-block;
+    padding: 5px 6px;
+    font-size: 11px;
+}
