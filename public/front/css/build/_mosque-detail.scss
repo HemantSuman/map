@@ -1,0 +1,166 @@
+/*main-inner-section style
+=====================*/
+.inner-page-section{
+	background: $white-color;
+	@include box-shadow(3px, 0, 5px, rgba(0,0,0,.1));
+    padding: 15px;
+    min-height: 460px;
+    @include bp-small{
+		/*padding: 5px 10px 15px 10px; */
+	}
+	@include mobile-medium{
+		box-shadow: none;
+		padding: 5px 15px 15px 15px;
+		}
+
+	.filters{
+		@include mobile-medium{
+			display: none;
+		}
+	}
+}
+.mosqueDetailleft{
+	.top-section{
+		.title{
+			h1{
+				color: $bluecolor;
+			}
+		}
+		.share{
+			a{
+				line-height: 100%;
+				vertical-align: middle;
+				img{
+					margin-right: 5px;
+					vertical-align: middle;
+				}
+			}
+
+		}
+	}
+	.mosque-img{
+		margin-bottom: 15px;
+		>img{
+			width: 100%;
+		}
+		@include mobile-medium{
+			text-align: center;
+		};
+		.owl-item.active.center{
+
+				transform:scale(1,1);
+				border: 2px solid #4d4d4d;
+
+
+		}
+		&.withthumb{
+			padding: 15px 25px;
+
+		}
+		.owl-nav{
+			div{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				font-size: 20px;
+				position: absolute;
+				top:50%;
+				transform:translate(0,-50%);
+				-webkit-transform:translate(0,-50%);
+				-moz-transform:translate(0,-50%);
+				&.owl-prev{
+					left:-20px;
+
+				}
+				&.owl-next{
+					right:-35px;
+
+				}
+			}
+		}
+	}
+	.mosque-info{
+		padding: 20px 0 20px 30px	;
+		@include mobile-medium{
+			padding: 10px 0;
+		};
+		>ul{
+			padding: 0;
+			margin-bottom: 15px;
+			>li{
+				display: inline-block;
+				list-style: none;
+				 margin-bottom: 15px;
+				 margin-right: 100px;
+				 @include bp-large{
+					  margin-right: 15px;
+				 };
+				 @include mobile-small{
+					 margin-bottom: 5PX;
+				 };
+				 &:first-child{
+					 display: block;
+				 }
+
+				a{
+					span{
+						display: inline-block;
+						margin-right: 10px;
+						vertical-align: middle;
+						@include mobile-small{
+							margin-right: 5px;
+						};
+
+						&.icon{
+							img{
+								height: 30px;
+								width: auto;
+								margin-right: 15px;
+								 @include bp-small{
+									 margin-right: 0;
+								 }
+								 @include mobile-small{
+									 	height: 20px;
+								 };
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
+	.widgets-map{
+		border-color: $bluecolor;
+		ul{
+			li{
+				font-size: 15px;
+				img{
+					height: 60px;
+					width: auto;
+					@include mobile-small{
+						height: 30px;
+					};
+				}
+				span{
+					color: $bluecolor;
+				}
+			}
+		}
+		.mapadder
+		{
+			>img{
+				width: 100%;
+			}
+		}
+
+	}
+}
+.col-md-9.col-sm-8.pad-rt-0{
+	@include mobile-medium{
+		padding: 0;
+	}
+}
+#html5-watermark{
+	display: none !important;
+}

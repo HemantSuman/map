@@ -1,0 +1,28 @@
+/*aboutus page css*/
+.about-section{
+    .title{
+        font-size: 24px;
+        color: $blue-color;
+        font-weight: normal;
+        padding-bottom: 10px;
+        @include mobile-medium{
+            font-size: 18px;
+        }
+    }
+    p{
+        line-height: 25px;
+        text-align: justify;
+    }
+
+    .what-baout{ 
+        ul {
+            padding-left: 0;
+            li {
+                list-style: none;
+                padding-left: 30px;
+                line-height: 25px;
+                background: url(../../img/arrow-blue.png) no-repeat 8px 9px;
+            }
+        }
+    }
+}

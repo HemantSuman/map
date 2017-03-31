@@ -1,0 +1,114 @@
+/*edit profile css*/
+#edit-profile{
+	border: 1px solid $border-color;
+	.title{
+		border-bottom: 1px solid $border-color;
+		padding: 13px 15px 15px 15px;
+	}
+	.section{
+		border-bottom: 1px solid $border-color;
+	}
+	.title-bg{
+		background: $title-bg-color;
+	}
+	.profile {
+	    margin: 20px auto;
+	    display: table;
+	    text-align: center;
+	    .image{
+	    	width: 200px;
+	    	height: 200px;
+	    	border-radius: 50%;
+	    	overflow: hidden;
+    	    border: solid 1px #d4d4d4;
+	    }
+	    .name {
+		    font-size: 24px;
+		    padding: 6px 0;
+		    font-weight: 500;
+		}
+		.edit {
+		  font-size: 14px;
+		  border-bottom: solid 1px;
+		  cursor: pointer;
+		}
+	}
+	.submit-btn{
+		margin: 20px auto;
+		background: $green-color;
+		color: $white-color;
+		border: 0;
+	    display: table;
+		width: 160px;
+		line-height: 40px;
+		text-transform: uppercase;
+		border-radius: 3px;
+	}
+	.submit-btn:hover{
+		background: $dark-green-color;
+	}
+}
+
+.edit-section{
+	padding: 20px 20px 0 20px;
+	.form-row{
+		padding: 0 0 15px 0;
+	    display: inline-block;
+	    width: 100%;
+		label{
+			float: right; 
+			font-weight: 400;
+		    color: $solid-color;
+		    line-height: 40px;
+		    display: block;
+		}
+		input:not([type=checkbox]){
+			width: 450px;
+		    height: 40px;
+		    border: 1px solid $grey-color; 
+		    max-width: 100%;
+		    padding: 0 10px;
+		    box-sizing: border-box;
+		    font-size: 14px;
+		}
+		.edit{
+			color: $green-color;
+			padding-left: 20px;
+		}
+	}
+	ul.checkbox-nav{
+		margin: 15px 0 0 0;
+		padding: 0;
+		border-bottom: solid 1px $border-color;
+		li{
+			list-style: none;
+		    padding-left: 28px;
+			position: relative;
+			margin-bottom: 15px;
+		}
+		input.m-checkbox{
+			position: absolute;
+		    z-index: 1;
+		    appearance: none;
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    opacity: 0;
+		    width: 18px;
+		    height: 16px;
+		    display: inline-block;
+		    margin: 0;
+		    left: 0;
+		}
+		input.m-checkbox+label{
+			margin-left: -28px;
+		    padding-left: 28px;
+		    position: relative;
+		    z-index: 0;
+		    background: url(../../img/checkbox-icon-light.png) 0 2px no-repeat;
+		    display: block;
+		}
+		input.m-checkbox:checked+label{
+			background: url(../../img/checkbox-icon-light-checked.png) 0 2px no-repeat;
+		}
+	}
+}

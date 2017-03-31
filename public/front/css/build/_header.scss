@@ -1,0 +1,335 @@
+/*Header style
+=====================*/
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  /*  @include box-shadow(4px, 0px, 4px, rgba(0, 0, 0, 0.40));*/
+	@include mobile-medium {
+		position: static;
+	}
+
+    .logo{
+    	img{
+    		height: 50px;
+    		 width:auto;
+    		@include bp-medium {
+    			height: 47px;
+    		}
+    		@include bp-small {
+    			height: 40px;
+    		}
+    		@include mobile-medium{
+	    		height: 30px;
+	    	}
+    	}
+    }
+}
+div#header-bar {
+    background: $header-top-bg;
+    padding: 5px 0;
+    display: block;
+    @include transition(all ease 3s);
+}
+ul.navigate-links {
+    padding:15px 0;
+    margin: 0;
+    @include bp-small{
+    	text-align: right;
+    	padding:10px 0;
+    }
+    li{
+    	list-style: none;
+    	display: inline-block;
+
+    }
+	li{
+
+		a{
+			font-size: 15px;
+      font-weight: 700;
+			color: $orangecolor;
+			padding: 6px 10px;
+
+			/*text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);*/
+			display: block;
+			@include transition(all ease 0.5s);
+			@include bp-medium {
+				font-size: 13px;
+				padding: 5px 3px;
+
+			}
+			@include mobile-medium {
+				padding: 0 10px;
+			}
+			@include mobile-small {
+				padding: 0 5px;
+        font-size: 12px;
+			}
+      @include mobile-view{
+        font-size: 10px;
+      };
+			&:hover{
+				color: $bluecolor;
+			}
+		}
+
+	}.postadd-link{
+		a{
+			border: 1px solid  $orangecolor;
+			border-radius:10px;
+			background: url(../../img/camera-icon.png) no-repeat 5px -1px;
+			padding: 8px 10px 8px 45px;
+      font-weight: 300;
+			&:hover{
+				background-position:5px -35px;
+				border: 1px solid  $bluecolor;
+			}
+      @include bp-medium{
+        padding: 5px 5px 5px 45px;
+      }
+			@include mobile-medium{
+				padding: 1px 5px 1px 35px;
+				background-size: 27px;
+        background-position: 5px 1px;
+				&:hover{
+					background-position:5px -25px;
+				}
+			}
+			@include mobile-small {
+        background: none;
+				 padding: 5px;
+        line-height: 100%;
+
+			}
+
+		}
+
+
+	}
+	@include bp-medium{
+		line-height: 28px;
+	}
+}
+
+div#header-main{
+	background: $header-main-bg;
+    padding: 0;
+
+    .logo {
+    	padding: 10px 0;
+	}
+
+
+}
+
+
+
+/*sticky header*/
+header.sticky{
+	#header-bar{
+		display: none;
+	}
+	div#header-main{
+		background: rgba(255,255,255,1);
+		nav ul{
+			height: 55px;
+			ul{
+				margin-top: 15px;
+				@include bp-medium {
+					margin-top: 19px;
+				}
+			}
+		}
+	}
+	.logo{
+		img{
+			height: 35px;
+		}
+	}
+}
+/*login header*/
+
+body.logged-in{
+	ul.navigate-links{
+    text-align: right;
+    @include mobile-medium{
+      //text-align: left;
+    };
+    li{
+      margin: 0 6px;
+      vertical-align: middle;
+      @include bp-large{
+        margin: 0 5px;
+      };
+      @include mobile-medium{
+        margin: 0 4px;
+      };
+      @include mobile-small{
+        margin: 0 2px;
+      };
+      &.lamp{
+          a{
+             padding: 0
+           }
+        img{
+          height: 28px;
+          width: auto;
+
+            @include mobile-medium{
+              height: 20px;
+            }
+        }
+        @include mobile-small{
+          display: none;
+        };
+      }
+      &.user-profile{
+        color: $white-color;
+  			font-size: 15px;
+  			text-transform: capitalize;
+        i{
+  				margin-left: 5px;
+  			}
+  			.profile-img{
+  				overflow: hidden;
+  				display: inline-block;
+  				border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: middle;
+          @include mobile-medium{
+            display: none;
+          };
+          img{
+            height: 32px;
+            width: 32px;
+          }
+  			}
+        .profileName{
+          display: inline-block;
+          border: 1px solid $orangecolor;
+          vertical-align: middle;
+          position: relative;
+          @include mobile-small{
+          //  border: none;
+             line-height: 100%;
+          };
+          a{
+
+            @include mobile-medium{
+              padding: 2px 5px;
+              line-height: 140%;
+            };
+          }
+           .user-name{
+               width: 100px;
+                max-width: 100px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                 overflow: hidden;
+                 vertical-align: middle;
+                 display: inline-block;
+                 @include bp-medium{
+                   width: 83px;
+                   max-width: 83px;
+                 };
+                 @include mobile-medium{
+                   width: 70px;
+                   max-width: 70px;
+                 };
+                 @include mobile-view{
+                   width: 50px;
+                   max-width: 50px;
+                 };
+                 @include mobile-small{
+                   //width: 50px;
+                   //max-width: 50px;
+                 };
+             }
+             .user-arrow{
+               display: inline-block;vertical-align: middle; color: #808080;font-size: 18px;
+             }
+         }
+
+  			ul.dropdown-menu{
+  				top: 100%;
+  				right: 0;
+  				left: auto;
+          width: 100%;
+          background-color: #e6e6e6;
+          padding: 0;
+          overflow: hidden;
+          border-radius: 0 !important;
+          border: 1px solid $orangecolor;
+          margin: 0;
+          min-width: 110px;
+          box-shadow: none;
+  				@include bp-medium {
+  					font-size: 13px;
+  				}
+  				> li{
+  					margin: 0;
+  					text-align: left;
+  					display: block;
+      			overflow: hidden;
+            >a{
+      					padding: 8px 15px;
+      					position: relative;
+                color: #494949;
+                @include transition(all ease 0.5s);
+                &:hover{
+                  color: $orangecolor;
+                  background: transparent !important;
+                }
+      					@include bp-medium {
+  							padding: 5px 10px;
+
+  						}
+              @include mobile-medium{
+                padding: 2px 5px;
+              };
+
+      				}
+  				}
+  			}
+      }
+    }
+
+
+		li.cart{
+			position: relative;
+        a{
+          font-size: 28px;
+          padding: 0;
+          @include mobile-medium{
+            font-size: 20px;
+          };
+        }
+			span.cart-value {
+			    position: absolute;
+			    top: 0px;
+			    right: -8px;
+			    background: $orangecolor;
+			    width: 18px;
+			    height: 18px;
+			    color: $white-color;
+			    font-size: 11px;
+			    line-height: 16px;
+			    text-align: center;
+			    border-radius: 50%;
+          @include mobile-medium{
+            right:0;
+            width: 12px;
+            height: 12px;
+            line-height: 12px;
+            font-size: 8px;
+
+          };
+			}
+		}
+	}
+
+}
+
+
+/*responsive navigation*/

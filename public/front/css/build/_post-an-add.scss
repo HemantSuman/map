@@ -1,0 +1,422 @@
+/*post ad*/
+#middle.no-banner{
+		padding-top: 70px;
+		@include bp-medium {
+			padding-top: 70px;
+		}
+		@include bp-small {
+			padding-top: 110px;
+		}
+		@include mobile-medium {
+			padding-top: 0px;
+		}
+
+}
+/*post step 1*/
+
+
+
+#post-add{
+	padding: 50px 0;
+	@include bp-small {
+		padding-top: 30px;
+	}
+
+	@include mobile-medium {
+		padding-top: 15px;
+	}
+	//font-family: $roboto-condensed;
+	.title{
+		color: $orangecolor;
+		text-align: center;
+		margin-bottom: 50px;
+		font-weight: 600;
+		text-transform: capitalize;
+		@include bp-small {
+			margin-bottom: 25px;
+		}
+		@include mobile-medium {
+			margin-bottom: 20px;
+		}
+	}
+	.container{
+		width: 100%;
+		max-width: 1000px;
+	}
+	.select-cat-box{
+			height: 725px;
+			border: 1px solid $orangecolor;
+			@include mobile-small{
+				height: auto;
+			}
+			h2{
+				color: $orangecolor;
+				text-align: center;
+				border-bottom: 2px solid $orangecolor;
+				padding: 10px 0;
+				line-height: 100%;
+				@include mobile-medium{
+					padding: 5px 0;
+				}
+			}
+			ul{
+				padding: 30px 15px 30px 30px;
+				width: 100%;
+				height: 675px;
+				@include mobile-small{
+					height: 500px;
+				};
+				@include mobile-medium{
+					padding: 10px;
+				}
+				&.mcustom{
+					.mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background: $orangecolor}
+					.mCS-dark-3.mCSB_scrollTools .mCSB_draggerRail{ background: $orangecolor; opacity: .5;}
+				}
+				li{
+					list-style: none;
+					display: inline-block;
+					width: 48%;
+					margin-right: 1%;
+					margin-bottom: 15px;
+					text-align: center;
+					@include mobile-medium{
+						margin-bottom: 5px;
+					}
+					&:nth-child(2n){
+						margin-right: 0;
+					}
+					a{
+						display: block;
+						background: $white-color;
+						padding: 15px;
+						@include mobile-medium{
+							padding: 5px;
+						}
+						span{
+							display: block;
+							margin-bottom: 20px;
+							@include mobile-medium{
+								margin-bottom: 5px;
+							}
+							&.cat-name{
+								color: $orangecolor;
+								font-size: 20px;
+								margin-bottom: 0;
+									@include mobile-medium{
+										font-size: 16px;
+									}
+							}
+						}
+						&.selected{
+							background: $orangecolor;
+							border-radius: 10px;
+							span{
+								&.cat-name{
+									color: $white-color;
+								}
+							}
+						}
+					}
+
+
+				}
+			}
+		}
+	.selectSubCat{
+			height: 725px;
+			display: inline-block;
+			background: $orangecolor;
+			width: 100%;
+			vertical-align: middle;
+			padding: 40px;
+			@include mobile-medium{
+				height: auto;
+				padding: 10px;
+				margin-top: 10px;
+			};
+			.selectSubinner{
+				border: 1px solid #f9baab;
+				height: 100%;
+				color: $white-color;
+				position: relative;
+				@include mobile-medium{
+					padding: 5px 0;
+				}
+				h2{
+					position: absolute;
+					top:50%;
+					left: auto;
+					right:auto;
+					width: 100%;
+					text-align: center;
+					@include mobile-medium{
+						position: relative;
+					}
+				}
+			}
+
+		}
+	.selectSubcategory{
+			@extend .select-cat-box;
+		}
+
+				.step3row{
+					 margin-bottom: 15px;
+					 @include mobile-medium{
+						 margin-bottom: 7px;
+					 };
+					.selectedCat{
+						a{
+							border: 1px solid $orangecolor;
+							color: $orangecolor;
+							background: $white-color;
+							display: block;
+							 text-align: center;
+							 padding: 10px 0;
+							 font-size: 17px;
+							 @include mobile-medium{
+								 font-size: 14px;
+								 margin-bottom: 5px;
+								 padding: 5px 0;
+							 };
+						}
+					}
+					h3{
+						color: #696969;
+						padding: 15px;
+						@include mobile-medium{
+							padding: 5px 15px;
+						};
+					}
+					h4{
+						color: #696969;
+						padding: 0 15px ;
+
+					}
+					.form-control-static{
+						color: $orangecolor;
+						br{
+							@include mobile-medium{
+								display: none;
+							}
+						}
+						@include mobile-medium{
+							min-height: 1px;
+							line-height: 100%;
+							padding-bottom: 0;
+						}
+					}
+					.form-control{
+						border-color: #696969;
+						border-radius: 6px;
+						height: 50px;
+						font-size: 18px;
+						font-weight: 300;
+						&.desc{
+							height: 250px;
+							@include mobile-medium{
+								height: 100px;
+							}
+						}
+						@include mobile-medium{
+							height: 30px;
+							font-size: 14px;
+						};
+					}
+					.input-group-addon{
+						background: transparent;
+						border-color: #696969;
+						border-radius:0 6px 6px 0;
+						@include mobile-medium{
+							font-size: 13px;
+						};
+					}
+					.textaraeright{
+						height: 250px;
+						@include mobile-medium{
+							height: auto;
+						}
+						span{
+							position: absolute;
+							bottom: 0;
+							@include mobile-medium{
+								position: relative;
+							}
+						}
+					}
+					.ad-data{
+						padding: 0;
+						li{
+							list-style: none;
+							display: block;
+							color: $orangecolor;
+							margin: 5px 0 5px 15px;
+							@include mobile-medium{
+								margin: 5px 0;
+							};
+
+							&.desc{
+								min-height: 200px;
+								border: 1px solid $orangecolor;
+								background: $white-color;
+								padding: 5px;
+								margin-top: 20px;
+								@include mobile-medium{
+ 									min-height: 100px;
+									margin-top: 5px;
+									};
+							}
+							&.adimgWrap{
+								color: #505050;
+								margin-top: 30px;
+								margin-left: 20px;
+								@include mobile-medium{
+									margin-top: 10px;
+									margin-left: 0;
+								}
+								h4{
+									@include mobile-medium{
+										padding-left: 0;
+									}
+								}
+								.row{
+									margin-top: 15px;
+									@include mobile-medium{
+										margin-top: 7px;
+									}
+									.adimg{
+										margin-bottom: 10px;
+									}
+								}
+							}
+						}
+					}
+					.contact-surname{
+						padding: 0;
+						margin: 0;
+						 @include mobile-medium{
+							 margin-top: 7px;
+						 }
+						li{
+							list-style: none;
+							display: inline-block;
+							margin-right: 30px;
+							 position: relative;
+							 vertical-align: middle;
+
+							@include bp-small{
+								margin-right: 20px;
+
+							};
+							 @include mobile-medium{
+								 margin-right: 15px;
+
+							 };
+
+							 input{
+ 								@extend  %radio;
+ 							}
+ 							input+label{
+ 								@extend  %radiolabel;
+ 							}
+ 							input:checked+label{
+ 								@extend  %radiolabel1;
+ 							}
+						}
+						&.pricelabel{
+							margin-top: 5px;
+						}
+					}
+					.btn{
+
+						width: 100%;
+						color: $white-color;
+						font-size: 20px;
+						font-weight: 600;
+						@include mobile-medium{
+							 font-size: 16px;
+							 font-weight: 300;
+						} ;
+						&.backbtn{
+							background:#999999;
+						}
+						&.postbtn{
+							background: $orangecolor;
+						}
+
+					}
+					.audSpan{
+						@include mobile-medium{
+							padding-top:7px;
+							display: block;
+						};
+					}
+					.loctxt{
+						color:#a2a2a2;
+						margin: 10px 0 10px 22px;
+						display: block;
+						@include mobile-medium{
+						margin: 10px 0 10px 0;
+						};
+					}
+					.offerCheck{
+						padding-left:20px;
+						@include mobile-medium{
+							padding-left: 0;
+						};
+						input{
+							@extend  %chk;
+						}
+						input+label{
+							@extend  %chklabel;
+							font-weight: 300;
+							vertical-align: top;
+						}
+						input:checked+label{
+							@extend  %chklabel1;
+						}
+					}
+					&.uploadimg{
+						>span{
+							padding:5px 0 10px 15px;
+							display: block;
+							color: #6a6a6a;
+						}
+						.jFiler-input-dragDrop{
+							background: $white-color;
+							width: 100%;
+							border: 1px solid #696969;
+							border-radius: 6px;
+							cursor: pointer;
+							height: 300px;
+							padding: 20px;
+							text-align: left;
+							@include mobile-medium{
+								margin: 0;
+								height: auto;
+								padding: 10px;
+							}
+						}
+					}
+					.time{
+						.form-control.timepicker1{
+							border-right: none;
+							border-top-right-radius: 0;
+							border-bottom-right-radius: 0;
+						}
+					}
+					.color{
+						.form-control{
+							border-right: none;
+							border-top-right-radius: 0;
+							border-bottom-right-radius: 0;
+						}
+					}
+				}
+
+}
+.bootstrap-timepicker-widget.dropdown-menu{
+	width: 220px;
+	top:100%;
+}

@@ -1,0 +1,39 @@
+.ui-selectmenu-button.ui-button {
+    padding: 10px 15px;
+    background: transparent;
+    border-radius: 0;
+    border: solid 1px #e1e1e1;
+    width: 170px;
+}
+.saved-search{
+	table.custom-table {
+		th:last-child{ 
+			text-align: center;
+		}
+		td:first-child{
+			img{
+				margin-right: 5px;
+			}
+		}
+		td:last-child{
+			text-align: center; 
+			a{
+				display: inline-block;
+				border-radius: 50%;
+				color: $white-color;
+				background: $blue-color;
+				width: 36px;
+			    height: 36px;
+			    line-height: 36px;
+			    font-size: 20px;
+			    @include transition(0.5s);
+			}
+			a:hover{
+				background: $green-color;
+			}
+		}
+		th.frequency {
+		    width: 190px;
+		}
+	}
+}

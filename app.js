@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
 var passport = require('passport');
-var session      = require('express-session');
+var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
 var index = require('./routes/index');
@@ -29,18 +29,18 @@ var env = require('./config/env');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var sessionStore = new MySQLStore(env.db);
-app.use(session({ 
-	secret: 'hemantSumanNatProjectAdminTheme',
-	store: sessionStore,
-	resave: true,
-	saveUninitialized: true 
+app.use(session({
+    secret: 'hemantSumanNatProjectAdminTheme',
+    store: sessionStore,
+    resave: true,
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -74,6 +74,51 @@ app.use('/admin/listings', admin_listings);
 
 
 
+
+passport.use('facebook', new FacebookStrategy({
+    clientID: fenv.facebook.clientIDD,
+    clientSecret: env.facebook.clientSecret,
+    callbackURL: env.facebook.callbackURL
+},
+// facebook will send back the tokens and profile
+function (access_token, refresh_token, profile, done) {
+    // asynchronous
+    process.nextTick(function () {
+
+        // find the user in the database based on their facebook id
+        User.findOne({'id': profile.id}, function (err, user) {
+
+            // if there is an error, stop everything and return that
+            // ie an error connecting to the database
+            if (err)
+                return done(err);
+
+            // if the user is found, then log them in
+            if (user) {
+                return done(null, user); // user found, return that user
+            } else {
+                // if there is no user found with that facebook id, create them
+                var newUser = new User();
+
+                // set all of the facebook information in our user model
+                newUser.fb.id = profile.id; // set the users facebook id                 
+                newUser.fb.access_token = access_token; // we will save the token that facebook provides to the user                    
+                newUser.fb.firstName = profile.name.givenName;
+                newUser.fb.lastName = profile.name.familyName; // look at the passport user profile to see how names are returned
+                newUser.fb.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+
+                // save our user to the database
+                newUser.save(function (err) {
+                    if (err)
+                        throw err;
+
+                    // if successful, return the new user
+                    return done(null, newUser);
+                });
+            }
+        });
+    });
+}));
 //http://stackoverflow.com/questions/26037755/where-to-place-common-functions-in-express-js
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -81,7 +126,6 @@ app.use(function (req, res, next) {
     err.status = 404;
     next(err);
 });
-
 // error handler
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development

@@ -1,0 +1,115 @@
+/*main categories style
+=====================*/
+#categoies-section{
+	background: $white-color;
+	padding: 20px 0 50px 0;
+	@include bp-small {
+		padding: 20px 0 30px 0;
+	}
+	@include mobile-medium {
+		padding: 20px 0 10px 0;
+	}
+}
+.categories{
+    margin-bottom: 50px;
+}
+.categories-inner {
+    position: relative;
+    height: 295px;
+    @include bp-large{
+    	height: 235px;
+    }
+    .detail {
+	    position: relative;
+	    z-index: 1;
+	    text-align: center;
+	    height: 100%;
+	    display: table;
+	    width: 100%;
+	    a {
+		    display: table-cell;
+		    vertical-align: middle;
+		    span{
+		    	display: block;
+		    	color: $text-white;
+		    	img {
+				    height: 69px;
+				    width: auto;
+    				margin: auto;
+    				@include bp-large{
+				    	height: 59px;
+				    }
+    				@include bp-medium {
+				    	height: 49px;
+				    }
+				}
+		    }
+		    span.name {
+			    padding-top: 30px;
+			    font-size: 25px;
+			    text-shadow: 0 1px 0 rgba(0,0,0,.3);
+			    @include bp-medium {
+			    	padding-top: 15px;
+			    	font-size: 20px;
+			    }
+			}
+		}
+	}
+	.overlay {
+	    position: absolute;
+	    top: 0;
+	    background: $blue-color;
+	    height: 100%;
+	    transition: all ease 0.5s;
+		-webkit-transition: all ease 0.5s;
+		-moz-transition: all ease 0.5s;
+		width: 100%;
+	    img{
+	    	opacity: 0.12;
+	    	height: 100%;
+	    	width: 100%;
+	    }
+	}
+	.detail:hover+.overlay {
+		background: $black-color !important;
+	}
+	.overlay-green{
+		background: $overlay-green;
+	}
+	.overlay-blue{
+		background: $overlay-blue;
+	}
+	.overlay-pink{
+		background: $overlay-pink;
+	}
+	.overlay-light-orange{
+		background: $overlay-light-orange;
+	}
+	.overlay-light-grey{
+		background: $overlay-light-grey;
+	}
+	.overlay-shaded-green{
+		background: $overlay-shaded-green;
+	}
+	.overlay-light-yellow{
+		background: $overlay-light-yellow;
+	}
+	.overlay-light-skin{
+		background: $overlay-light-skin;
+	}
+	.overlay-light-blue{
+		background: $overlay-light-blue;
+	}
+	.overlay-light-navy{
+		background: $overlay-light-navy;
+	}
+	.overlay-fade-green{
+		background: $overlay-fade-green;
+	}
+	.overlay-light-brown{
+		background: $overlay-light-brown;
+	}
+	@include bp-medium {
+		height: 200px;
+	}
+}

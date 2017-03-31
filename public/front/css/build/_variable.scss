@@ -1,0 +1,135 @@
+/*common variables*/
+$header-top-bg : rgba(15,38,50,1);
+$dots-blue-color: #003e5e;
+$green-color : #7ab55c;
+$green-color-hover : #5ba037;
+$red-color : red;
+$dark-green-color : #5ba037;
+$orange-color : #ff7700;
+$orange-color-hover : #d06100;
+$blue-color: #006495;
+$light-blue-color: #263238;
+$black-color:#000;
+$white-color:#fff;
+$grey-color:#e1e1e1;
+$header-main-bg : rgba(255,255,255,0.90);
+$categories-bg: #f0f5f8;
+$text-white:#fff;
+$main-search-form : rgba(0,0,0,0.50);
+$solid-color: #181818;
+$light-color: #767676;
+$grid-color: #959595;
+$border-color: #e9e9e9;
+$li-odd-bg: #fcfcfc;
+$li-even-bg: #f4f4f4;
+$li-hover: #e9f8ff;
+$input-bg: #f6f6f6;
+$input-border: #ebebeb;
+
+
+/*overlay variables*/
+$overlay-green: #8bb028;
+$overlay-blue: #006495;
+$overlay-pink: #e75d5d;
+$overlay-light-orange: #c98a51;
+$overlay-light-grey: #9997a4;
+$overlay-shaded-green: #359c3f;
+$overlay-light-yellow: #c4be5d;
+$overlay-light-skin: #e7915d;
+$overlay-light-blue: #5d94e7;
+$overlay-light-navy: #90a9d1;
+$overlay-fade-green: #89bd45;
+$overlay-light-brown: #b28e6a;
+
+/*ddselect variables*/
+$ddselect-color: #525252;
+
+/*home page updates */
+$nav-li-color:#666666;
+$nav-li-active-color: #006495;
+$transparent: transparent;
+
+/*footer variables*/
+$footer-bg: #171026;
+$footer-top-bg: #2d2544;
+$footer-text: #eeeeee;
+$footer-text-li:#999999;
+
+/*popup color*/
+/*popup color*/
+$facebook-color: #306ea9;
+$google-color: #cc4e4f;
+$p-border-color: #666666;
+$submit-btn-color: #ef4b23;
+/*font-families
+===========================*/
+$roboto-condensed:'Roboto Condensed', sans-serif;
+$roboto:'Roboto', sans-serif;
+/*dashboard variables*/
+$dashborad-border-color: #d7d7d7;
+$tab-li-bg: #ececec;
+$tab-content-bg: #e5e5e5;
+$even-li-bg: #f6f6f6;
+$title-bg-color: #f5f5f5;
+$select-bg: #9a9a9a;
+$reply-color: #a5a5a5;
+$reply-dark-color: #818181;
+$reply-user-bg-color : #e5eff4;
+$reply-sender-bg-color : #f1f1f1;
+
+
+/*progress bar color*/
+$progress-li-color: #848484;
+
+/*profile section*/
+$rating-bar-value: #99da79;
+$form-border-color: #e0e0e0;
+
+/*Car detail page*/
+$light-bg: #eff4ec;
+$description-color: #f8faf6;
+$list-features: #f7f7f7;
+
+/*contact us page variables*/
+$light-blue-bg : #f0f5f8;
+$b-color : #caced1;
+$input-b-color: #b7b7b7;
+/*new-variable*/
+$orangecolor:#ef4b23;
+$bluecolor:#5a4098;
+$breadbg:#b3b3b3;
+$breadcolor:#585858;
+
+
+/*mixins
+===========================*/
+
+/*@mixin col-blue-color($bgopacity) {
+	background: rgba(63,81,181,$bgopacity);
+}
+@mixin col-pink-color($bgopacity) {
+	background: rgba(156,39,176,$bgopacity);
+}
+@mixin col-green-color($bgopacity) {
+	background: rgba(76,175,80,$bgopacity);
+}
+@mixin col-brown-color($bgopacity) {
+	background: rgba(121,85,72,$bgopacity);
+}*/
+/*@mixin transition($seconds) {
+	transition: all ease $seconds;
+    -moz-transition: all ease $seconds;
+    -webkit-transition: all ease $seconds;
+}*/
+
+@mixin transformY($deg) {
+	transform: rotateY($deg);
+	-webkit-transform: rotateY($deg);
+	-moz-transform: rotateY($deg);
+}
+/*box shadow mixins*/
+/*@mixin box-shadow($opacity){
+    -webkit-box-shadow: 3px 0 5px 0 rgba(0,0,0,$opacity);
+    -moz-box-shadow: 3px 0 5px 0 rgba(0,0,0,$opacity);
+    box-shadow: 3px 0 5px 0 rgba(0,0,0,$opacity);
+}*/

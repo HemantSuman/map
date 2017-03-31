@@ -1,0 +1,113 @@
+	/*Profile data*/
+.profileblock{
+	margin-bottom: 10px;
+	p{
+		line-height: 120%;
+		color:#808080;
+		font-size: 14px;
+		font-weight: 300;
+		@include mobile-medium{
+			font-size: 13px;
+		};
+		@include mobile-small{
+			font-size: 11px;
+		};
+
+	}
+	.proicon{
+		a{
+			color: $orangecolor;
+			display: block;
+			span{
+				display: inline-block;
+				vertical-align: middle;
+				img{
+					height: 38px;
+					width: auto;
+					@include mobile-medium{
+						height: 25px;
+					};
+
+				}
+			}
+		}
+	}
+	.proData{
+			h3{
+				margin: 8px 0;
+				@include mobile-medium{
+					position: absolute;
+					top:-20px;
+					left:65px;
+					margin: 0;
+				};
+			}
+	}
+	.proDatainner{
+		padding: 10px 0;
+		.profileRow{
+			margin-bottom: 20px;
+			@include mobile-medium{
+				margin-bottom: 0;
+			};
+			.form-control{
+				border-color: #696969;
+				border-radius: 6px;
+				height: 50px;
+				font-size: 18px;
+				font-weight: 300;
+				@include bp-small{
+					height: 40px;
+					font-size: 16px;
+				};
+				@include mobile-medium{
+					height: 30px;
+					margin-bottom: 5px;
+					font-size: 13px;
+				};
+			}
+			.checkbox{
+				margin: 15px 0 0 0;
+				input.m-checkbox{
+					 @extend %chk
+
+				 }
+			input.m-checkbox+label{
+				 @extend %chklabel;
+				 color: #000;
+				 font-weight: 600;
+			 }
+			input.m-checkbox:checked+label{
+				@extend  %chklabel1;
+			}
+			p{
+				position: absolute;
+				top:25px;
+				left: 30px;
+				@include mobile-medium{
+				display: none;
+				};
+			}
+			}
+			.btn{
+				background: $orangecolor;
+				color: $white-color;
+				padding: 6px 0;
+				display: block;
+				width: 100%;
+				font-size: 18px;
+				@include mobile-medium{
+					font-size: 13px;
+					line-height: 100%;
+				};
+			}
+			.currentlocation{
+				a{
+					color: $orangecolor;
+					display:inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}

@@ -8,9 +8,9 @@ var db = {
 
 
 var facebook = {
-    clientID: '206866863088403',
-    clientSecret: 'b163694920e5a3fbde5ecf5c0fe17736',
-    callbackURL: 'http://acadonia.planetwebsolution.com:4001/auth/facebook/callback',
+    clientID: '649072728618484',
+    clientSecret: 'e84c935eccb5b298313c855c7959ad38',
+    callbackURL: 'http://127.0.0.1:7000/auth/facebook/callback',
     successRedirect: '/dashboard',
     failureRedirect: '/'
 };

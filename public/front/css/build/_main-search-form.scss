@@ -1,0 +1,333 @@
+/*main-search-form style
+=====================*/
+#main-search-form{
+	padding: 15px 0;
+	.all-category-search
+	{
+		border: 1px solid $orangecolor;
+		height: 42px;
+		font-weight: 300;
+		//font-size: 21px;
+			@include mobile-medium{
+				height: auto;
+				margin: 0 15px;
+			}
+	}
+    @include bp-medium {
+		padding: 12px 0;
+	}
+	 @include bp-small {
+		padding: 0 0 8px 0;
+	}
+	@include mobile-medium {
+		top: 0;
+	}
+	.all-category-search>div{
+		padding: 0;
+
+	}
+}
+
+.item-name{
+	display: block;
+	border: 0;
+	height: 40px;
+	line-height: 40px;
+	background: transparent;
+	border-left: solid 1px $orangecolor;
+	@include mobile-medium{
+		border-top: solid 1px $orangecolor;
+		border-left:0;
+	}
+	.searchfield{
+		width: 100%;
+		height: 40px;
+		padding: 0 15px;
+		border: 0;
+		 background: transparent;
+		@include bp-medium {
+			height: 40px;
+		}
+		@include bp-small {
+			height: 30px;
+			padding: 0 10px;
+		}
+		@include mobile-medium{
+			margin-bottom: 2px;
+		}
+	}
+	a.saved-search {
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    -webkit-transform: translateY(-50%);
+	    -moz-transform: translateY(-50%);
+	    right: 0;
+	    font-size: 14px;
+	    color: $green-color;
+        padding-left: 25px;
+        background: url(../../img/saved-search.png) no-repeat 10px center #fff;
+        padding: 5px 15px 5px 35px;
+        height: 100%;
+        line-height: 52px;
+        @include transition(all ease 0.5s);
+        &:hover{
+        	background-color: $input-bg;
+        }
+        @include bp-small {
+        	height: 38px;
+			line-height: 26px;
+        }
+	}
+}
+.location{
+	padding: 0 50px 0 0;
+	position: relative;
+	@include bp-medium {
+		padding: 0 40px 0 0;
+	}
+	@include bp-small {
+		padding: 0 40px 0 0;
+	}
+	@include mobile-medium {
+		padding: 0 0 0 0;
+	}
+	.locationfield{
+		width: 100%;
+		height: 40px;
+		border: 0;
+		padding: 0 15px 0 50px;
+		border-left: solid 1px $orangecolor;
+		background: url(../../img/locate-icon.png) no-repeat left 10px center;
+		@include bp-medium {
+			height: 40px;
+			background-size: 25px;
+			padding: 0 15px 0 45px;
+		}
+		@include bp-small {
+			height: 40px;
+			padding: 0 10px 0 45px;
+			background-size: 25px;
+		}
+		@include mobile-medium{
+			margin-bottom: 2px;
+			 border-top: solid 1px $orangecolor;
+			 border-left: 0;
+
+		}
+	}
+	.search-button{
+		width: 45px;
+		height: 40px;
+		position: absolute;
+		right: -1px;
+		top: 0;
+		border: 0;
+		background: url(../../img/search-icon.png) no-repeat center $orangecolor;
+		@include transition (all ease 0.5s);
+		@include bp-medium {
+			width: 30px;
+			height: 40px;
+			background-size: 18px;
+		}
+		@include bp-small {
+			width: 45px;
+			height: 40px;
+			background-size: 22px;
+		}
+		@include mobile-medium{
+			position: static;
+			width: 100%;
+		}
+	}
+	.search-button:hover{
+		background-color: $bluecolor;
+	}
+}
+
+.km-dropdown {
+    border-left: solid 1px $orangecolor;
+    display:block;
+    @include mobile-medium{
+			border-top: solid 1px $orangecolor;
+			 border-left: 0;
+			 display: block;
+
+		}
+    select {
+	    width: 100%;
+			min-width: 1px;
+			height:40px;
+	  	padding: 10px 0 10px 10px;
+			color: #808080;
+	  	border: 0;
+			background-color: transparent;
+			background-position: 90% center;
+			background-size:14px auto;
+				@include bp-large {
+					padding: 10px 0 10px 10px;
+				}
+        @include bp-medium {
+					height: 40px;
+					padding: 11px 15px;
+				}
+				@include bp-small {
+					height: 40px;
+					padding: 11px 10px;
+					font-size: inherit;
+				}
+			@include mobile-medium{
+				background-position: 98% center;
+			};
+		}
+	@include mobile-medium{
+		margin-bottom: 2px;
+
+
+	}
+}
+
+/*===================================================
+		nth level custom selectbox
+====================================================*/
+.custom-selectbox{
+	overflow: hidden;
+	display: block;
+	background: url(../../img/categories-icon.png) no-repeat left 5px center;
+	&.open{
+		background: #e6e6e6 url(../../img/categories-icon.png) no-repeat left 5px center;
+	}
+	@include mobile-medium{
+		margin-bottom: 2px;
+	}
+	.selected{
+		height: 40px;
+		line-height: 40px;
+		background: url(../../img/select-arrow.png) no-repeat right 10px center;
+		padding: 0 30px 0 40px;
+		margin-bottom: 1px;
+		@include bp-medium {
+			height: 40px;
+			line-height: 40px;
+		}
+		@include bp-small {
+			height: 40px;
+			//line-height: 30px;
+		}
+	}
+	img{
+		margin-right: 10px;
+		width: 20px;
+		vertical-align: middle;
+		@include bp-small {
+			margin-right: 6px;
+			width: 14px;
+		}
+	}
+}
+
+ul.select-options {
+	padding: 15px 40px;
+	margin: 0;
+	display: none;
+	width: 100%;
+	min-width: 500px;
+	background: $white-color;
+	position: absolute;
+	max-height: 500px;
+	overflow: auto;
+	z-index: 8;
+	background: #e6e6e6;
+	border: 1px solid $orangecolor;
+	border-top: none;
+	left:-1px;
+	@include mobile-medium{
+		min-width: 1px;
+		padding: 15px;
+	};
+
+	li {
+
+		display: inline-block;;
+		list-style: none;
+		position: relative;
+		vertical-align: top;
+		 margin-bottom: 10px;
+		 &.all{
+ 			display: block;
+ 		}
+		a{
+			display: block;
+			padding: 2px 15px;
+			font-size: 14px;
+			font-weight: 600;
+			@include bp-small {
+				padding: 2px 10px;
+				font-size: 12px;
+			}
+			&:hover{
+				background-color: #f4f4f4;
+			}
+		}
+
+		ul.dropdown{
+			padding-left: 0;
+
+			li{
+				display: block;
+				margin-bottom: 0;
+				a{
+					font-weight: 300;
+				}
+			}
+		}
+	}
+}
+
+@include mobile-min-size{
+	.logged-in{
+		#main-search-form{
+			.col-lg-3.col-md-3.col-sm-3{
+				width: 100px;
+			}
+			.col-md-8.col-sm-8.pad-0{
+				width: 50px;
+
+			}
+			.col-md-4.col-sm-4.pad-0{
+				width: 65px;
+			}
+			.col-lg-4.col-md-3.col-sm-3{
+				width: 165px;
+			}
+			.col-lg-5.col-md-6.col-sm-6{
+				width: 155px;
+				float: right;
+			}
+		}
+	}
+};
+
+@include mobile-medium-size{
+	.logged-in{
+		#main-search-form{
+			.col-lg-3.col-md-3.col-sm-3{
+				width: 100px;
+			}
+			.col-md-8.col-sm-8.pad-0{
+				width: 50px;
+
+			}
+			.col-md-4.col-sm-4.pad-0{
+				width: 80px;
+			}
+			.col-lg-4.col-md-3.col-sm-3{
+				width: 226px;
+			}
+			.col-lg-5.col-md-6.col-sm-6{
+				width: 180px;
+
+			}
+		}
+	}
+};

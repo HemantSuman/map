@@ -79,8 +79,8 @@ module.exports = function (sequelize, DataTypes) {
                             res(users);
                         });
                     },
-                    getAllValues: function (where, res) {
-                        myModel.findAll({where: where}).then(function (results) {
+                    getAllValues: function (req, res) {
+                        myModel.findAll({where: req}).then(function (results) {
                             res(results);
                         });
                     },

@@ -1,0 +1,151 @@
+/*========================================
+			box shaddow
+==========================================*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+
+
+/*========================================
+			transition
+==========================================*/
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*========================================
+      transition
+==========================================*/
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+/*========================================
+			opacity
+==========================================*/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/*========================================
+			font-size
+==========================================*/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+/*========================================
+			animation
+==========================================*/
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin appearance($value){
+  -webkit-appearance: #{$value};
+   -moz-appearance: #{$value};
+   appearance:#{$value};
+   -ms-appearance: #{$value};
+}
+
+/*========================================
+			Responsive breakpoints
+==========================================*/
+@mixin bp-min-size {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin mobile-medium-size {
+  @media (min-width: 1230px) {
+    @content;
+  }
+}
+@mixin mobile-min-size {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mobile-medium {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media only screen and (max-width: 468px) {
+    @content;
+  }
+}
+@mixin mobile-view {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}

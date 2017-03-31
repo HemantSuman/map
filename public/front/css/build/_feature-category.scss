@@ -1,0 +1,219 @@
+/*feature category style
+============================*/
+
+div#feature-category {
+    padding: 45px 0;
+     background: #f2f2f2;
+font-family: $roboto-condensed;
+    h2{
+    	font-size: 35px;
+
+    	text-align: center;
+    	font-weight: bold;
+    	text-transform: capitalize;;
+	    margin-bottom: 40px;
+	    color: #4d4d4d;
+	    @include bp-medium {
+			font-size: 22px;
+       margin-bottom: 25px;
+		}
+		@include bp-small {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+    }
+    @include bp-small {
+		padding: 20px 0;
+	}
+}
+
+.featured-carousel {
+
+	margin-bottom: 15px;
+    position: relative;
+    @include mobile-small {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+	}
+	.featuredcategories{
+		text-align: center;
+		 margin:0 auto;
+		.catergory-img{
+
+			border-radius: 100%;
+			position: relative;
+
+      img{
+        border: 5px solid $white-color;
+        margin: 0 auto;
+      }
+		}
+			.catergory-name{
+				h3{
+				font-size: 26px;
+				color: $orangecolor;
+				padding: 15px 0;
+				font-weight: bold;
+          @include mobile-small {
+            font-size: 18px;
+          }
+			}
+
+		}
+	}
+	.owl-nav {
+
+		>div {
+			display: inline-block;
+      width: 50px;
+			height: 50px;
+      position: absolute;
+      top:50%;
+      margin-top: -25px;
+			@include transition (all ease-in 0.3s);
+			padding: 0;
+			font-size: 50px;
+			color: $orangecolor;
+      @include bp-medium{
+        top:0;
+        margin-top: -50px;
+      };
+
+		}
+		.owl-prev {
+
+			left: -70px;
+			@include bp-medium {
+        left:auto;
+        right:55px
+			}
+		}
+		.owl-next {
+
+			right: -70px;
+			@include bp-medium {
+        right:0;
+			}
+		}
+		.owl-prev:hover {
+			color: $bluecolor;
+		}
+		.owl-next:hover {
+			color: $bluecolor;
+		}
+		@include bp-medium {
+			top: 80px;
+		}
+	}
+
+}
+
+.adv-banner{
+	cursor: pointer;
+}
+
+.app-section{
+
+	padding: 55px 0 0;
+	margin: 50px 0 120px;
+	background: $orangecolor;
+	text-align: center;
+	position: relative;
+	min-height: 455px;
+  @include bp-small{
+    padding: 20px 0 0;
+    margin: 20px 0 50px;
+    min-height: 355px
+  }
+  @include mobile-medium{
+    padding: 10px 0 0;
+    margin: 10px 0;
+    min-height: 1px;
+  }
+
+
+	.app-img{
+		text-align: right;
+		margin-bottom: -75px;
+      @include mobile-medium{
+        margin-bottom: 10px;
+      }
+	}
+	.app-source{
+		display: table-cell;
+		 height: 450px;
+		 vertical-align: middle;
+     @include bp-small{
+       height: 355px;
+     }
+     @include mobile-medium{
+       height: auto;
+      display: block;
+     }
+		h3{
+      font-family: $roboto-condensed;
+			color: $white-color;
+			font-size: 36px;
+			 font-weight: bold;
+       @include bp-small{
+         font-size: 26px;
+       }
+       @include mobile-medium{
+         font-size: 20px;
+       }
+		}
+
+		span.slogan{
+      color: $white-color;
+      display: block;
+			margin: 25px 0 35px 0;
+			 font-size: 22px;
+       font-weight: 400;
+       line-height: 100%;
+       @include mobile-medium{
+         margin: 10px 0;
+         font-size: 16px;
+       }
+		}
+		ul{
+      @include mobile-medium{
+        padding-left: 0;
+      };
+			li{
+				list-style: none;
+				display: inline-block;
+				margin-right: 10px;
+        a{
+          img{
+            @include mobile-medium{
+              height: 50px;
+              width: auto;
+            }
+            @include mobile-small{
+              height: 40px;
+              width: auto;
+            }
+          }
+        }
+			}
+		}
+	}
+}
+#add-space{
+	 background: #f2f2f2;
+	 //height: 250px;
+	 margin-bottom: 50px;
+   padding:  30px 0;
+	 text-align:center;
+	 color: $white-color;
+	 //font-size: 30px;
+	// font-family: $roboto-condensed;
+
+
+    @include mobile-medium{
+     margin-bottom: 10px;
+      height: 150px;
+       font-size: 20px;
+
+    }
+}

@@ -1,0 +1,205 @@
+/*aboutus page css*/
+.static-page-content{
+   padding: 45px 0;
+   @include bp-small{
+     padding: 30px 0;
+   };
+   @include mobile-medium{
+     padding: 15px 0;
+   };
+
+  .container{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    @include bp-small{
+      max-width: 100%;
+      width: auto;
+    };
+  }
+    .title{
+        //font-size: 24px;
+        color: $orangecolor;
+        font-weight: 600;
+        padding-bottom: 10px;
+        @include mobile-medium{
+            //font-size: 18px;
+        }
+    }
+    p{
+        line-height: 25px;
+        text-align: justify;
+    }
+    /*Contact us*/
+    .contactForm{
+      font-family: $roboto;
+    }
+    .contactTop{
+      margin-bottom: 40px;
+      @include bp-small{
+        margin-bottom: 20px;
+      };
+      @include mobile-medium{
+        margin-bottom: 15px;
+      };
+      .title{
+        display: inline-block;
+      }
+      .search{
+        max-width: 250px;
+        display: inline-block;
+        @include mobile-small{
+          display: block;
+          max-width: 100%;
+          width: 100%;
+
+
+        };
+        &.pull-right{
+          @include mobile-medium{
+            float: none !important;
+          };
+        }
+        .searchinput{
+          border: 1px solid #fac8bc;
+          display: inline-block;
+          max-width:190px;
+          height: 30px;
+          background: $white-color;
+          border:1px solid #fac8bc;
+          color: #4d4d4d;
+          box-shadow:none;
+          padding: 5px 10px;
+          vertical-align: middle;
+        }
+        .searchbt{
+          height: 30px;
+          width: 32px;
+          display: inline-block;
+          margin-left: -4px;
+          background: $orangecolor url("../../img/search-icon.png") center center no-repeat;
+          border: none;
+          box-shadow: none;
+          background-size: 60%;
+          vertical-align: middle;
+        }
+
+      }
+    }
+    .contactForm{
+      .form-row {
+        margin-bottom: 25px;
+        @include mobile-medium{
+          margin-bottom: 8px;
+        };
+      }
+      .subheading{
+        background: $orangecolor;
+        color: $white-color ;
+        padding:15px;
+        border-radius: 6px;
+         font-size: 18px;
+         @include mobile-medium{
+            font-size: 15px;
+            padding: 6px;
+         };
+      }
+      .form-control{
+        border-color: #f9b6a6;
+        border-radius: 0;
+        height: 45px;
+        box-shadow: none;
+        line-height: 100%;
+        @include mobile-medium{
+          height: 35px;
+
+        };
+      }
+      textarea{
+        &.form-control{
+          height: 200px;
+          resize: none;
+          @include mobile-medium{
+            height: 100px;
+          };
+        }
+      }
+      select{
+        &.form-control{
+          background: url("../../img//icons/orange-arrow.png") 96% center no-repeat;
+          color: $orangecolor;
+        }
+      }
+      label{
+        font-weight: 400;
+        color: #535353;
+        font-size: 17px;
+        span{
+          color: $orangecolor
+        }
+        @include mobile-medium{
+          font-size: 14px;
+          margin-bottom: 5px;
+        };
+      }
+      .inputFile{
+        position: relative;
+        .filetype{
+          opacity: 0;
+        }
+        label{
+          position: absolute;
+          top:0;
+          z-index: 9;
+          left:0;
+          color: $orangecolor;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      .btn{
+        background: $orangecolor;
+        width: 100%;
+        color: $white-color;
+        padding: 15px 0;
+        font-size: 15px;
+        @include mobile-medium{
+          font-size: 14px;
+          padding: 8px 0;
+        };
+      }
+  }
+}
+
+/*saveSerach*/
+.saveSearchTable{
+  .table-responsive{
+    overflow-x: scroll !important;
+    width: 100% !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+    .table{
+
+      -webkit-overflow-scrolling: touch !important;
+
+        tr{
+          th{
+            color: $orangecolor;
+            text-align: center;
+          }
+          td{
+            color: #4d4d4d;
+            span{
+              display: block;
+              text-align: center;
+              font-size: 20px;
+            }
+            select{
+              width: 100%;
+            }
+          }
+        }
+
+    }
+}

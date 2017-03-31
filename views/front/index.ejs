@@ -1,5 +1,10 @@
+<section>
+        
+        <div id="map1" class="map" style="height:500px;">
+</section>
+
 <div class="map-wrapper">
-    <div id="map1" class="map">
+    <!--<div id="map" class="map">-->
     </div><!-- /.map -->
 
     <div class="map-filter-horizontal">
@@ -18,46 +23,7 @@
                             <% }); %>
 
                         </select>
-                    </div><!-- /.form-group -->
-
-                    <!--                    <div class="form-group col-sm-3">
-                                            <select name="contract">
-                                                <option>Contract</option>
-                                                <option>Rent</option>
-                                                <option>Sale</option>
-                                            </select>
-                                        </div> /.form-group 
-                    
-                                        <div class="form-group col-sm-3">
-                                            <select name="location">
-                                                <option>Location</option>
-                                                <option>Kensal</option>
-                                                <option>Braymer</option>
-                                                <option>Horton Bay</option>
-                                                <option>Laurel Run</option>
-                                                <option>Estherville</option>
-                                                <option>Millhousen</option>
-                                                <option>Allegan</option>
-                                                <option>Florala</option>
-                                                <option>Dundarrach</option>
-                                                <option>Neligh</option>
-                                                <option>Roseboro</option>
-                                                <option>Mount Pleasant</option>
-                                                <option>Moro</option>
-                                                <option>Strathmoor Village</option>
-                                                <option>Mabton</option>
-                                                <option>Loup City</option>
-                                                <option>Wolverine</option>
-                                                <option>San Leandro</option>
-                                                <option>Dunwoody</option>
-                                                <option>Battle Ground</option>
-                                                <option>Hanson</option>
-                                                <option>Reedley</option>
-                                                <option>Bayshore</option>
-                                                <option>Tupelo</option>
-                                                <option>Lone Pine</option>
-                                            </select>
-                                        </div> /.form-group -->
+                    </div>
                 </div><!-- /.row -->
             </form>
         </div><!-- /.container -->
@@ -73,7 +39,7 @@
 
         map = new google.maps.Map(document.getElementById('map'), {
 //            center: {lat: -34.397, lng: 150.644},
-            zoom: 10,
+            zoom: 16,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
     }
@@ -82,9 +48,9 @@
 
         setMapObj();
 
-//        var infowindow = new google.maps.InfoWindow({
-//            content: '<div class="marker ' + 'color' + '"><img src="/front/img/house.png" alt=""></div>'
-//        });
+        var infowindow = new google.maps.InfoWindow({
+            content: '<div class="marker ' + 'color' + '"><img src="/front/img/house.png" alt=""></div>'
+        });
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -104,14 +70,14 @@
 //                    draggable: true,
 //                    title: 'You are here'
 //                });
-//                document.getElementById("lat").value = pos.lat;
-//                document.getElementById("lng").value = pos.lng;
+////                document.getElementById("lat").value = pos.lat;
+////                document.getElementById("lng").value = pos.lng;
 //
-//                google.maps.event.addListener(marker, 'drag', function (event) {
-//                    document.getElementById("lat").value = event.latLng.lat();
-//                    document.getElementById("lng").value = event.latLng.lng();
-//                });
-                
+////                google.maps.event.addListener(marker, 'drag', function (event) {
+////                    document.getElementById("lat").value = event.latLng.lat();
+////                    document.getElementById("lng").value = event.latLng.lng();
+////                });
+//                
 //                marker.addListener('click', function() {
 //                    infowindow.open(map, marker);
 //                  });

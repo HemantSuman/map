@@ -1,0 +1,101 @@
+/*custom checkbox & radion button*/
+%radio{
+	position: absolute;
+		z-index: 1;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		opacity: 0;
+		width: 33px;
+		height: 33px;
+		display: inline-block;
+		margin: 0;
+		left:10px;
+		cursor: pointer;
+		@include mobile-medium{
+			width: 25px;
+			height: 25px;
+		}
+		@include mobile-small{
+			width: 18px;
+			height: 18px;
+		}
+}
+%radiolabel{
+	padding-left: 50px;
+	position: relative;
+	z-index: 0;
+	background: url(../../img/icons/radio-icon.png) 0 1px no-repeat;
+	display: block;
+	min-height: 35px;
+	min-width: 33px;
+	color: #808080;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 400;
+	cursor: pointer;
+	@include mobile-medium{
+		min-width: 28px;
+		min-height: 28px;
+		padding-left: 32px;
+		font-size: 16px;
+		background-size: 25px 25px;
+		line-height: 140%;
+	}
+	@include mobile-small{
+		min-width: 22px;
+		min-height: 22px;
+		padding-left: 22px;
+		font-size: 14px;
+		background-size: 18px 18px;
+		line-height: 160%;
+	}
+
+}
+%radiolabel1{
+	background: url(../../img/icons/radio-check.png) 0 1px no-repeat;
+	cursor: pointer;
+		@include mobile-medium{
+			background-size: 25px 25px;
+		}
+		@include mobile-small{
+			background-size: 18px 18px;
+		}
+}
+
+%chk{
+	position: absolute;
+		z-index: 1;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		opacity: 0;
+		width: 21px;
+		height: 21px;
+		display: inline-block;
+		margin: 0;
+		left:10px;
+}
+%chklabel{
+	padding-left: 30px;
+	position: relative;
+	z-index: 0;
+	background: url(../../img/icons/chekbox-icon.jpg) 0 1px no-repeat;
+	display: block;
+	min-height: 23px;
+	min-width: 21px;
+	color: #808080;
+	font-size: 20px;
+	line-height: 100%;
+	@include mobile-medium{
+		font-size: 16px;
+		line-height: 150%
+	}
+	@include mobile-medium{
+		font-size: 14px;
+
+	}
+}
+%chklabel1{
+	background: url(../../img/icons/checkbox-icon-light-checked.png) 0 1px no-repeat;
+}

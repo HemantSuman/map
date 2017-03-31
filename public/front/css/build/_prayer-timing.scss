@@ -1,0 +1,134 @@
+/*prayer timing style
+=====================*/
+#prayer-timing{
+	.top-section{
+		.title{
+			h1{
+					color: $bluecolor;
+					margin-bottom: 35px;
+					@include bp-small{
+				    	margin-bottom: 15px;
+					}
+					@include mobile-medium{
+				    	margin-bottom: 10px;
+							margin-top: 10px;
+					}
+			}
+		}
+		.prayDate{
+			padding: 0;
+			margin-bottom: 25px;
+			@include mobile-medium{
+				margin-bottom: 10px;
+			}
+
+			li{
+				list-style: none;
+				display: inline-block;
+				margin-right: 20px;
+				color: $bluecolor;
+				vertical-align: middle;
+				&:last-child{
+					margin-right: 0;
+				}
+				@include bp-small{
+					margin-right: 10px
+				};
+				span{
+					display: block;
+					margin-top: 10px;
+					@include mobile-medium{
+						margin-top: 2px;
+					};
+				}
+				img{
+						height: 48px;
+						width: auto;
+						@include mobile-medium{
+							height: 25px;
+						};
+				}
+			}
+			&.prayloc{
+				margin-top: 10px;
+			}
+		}
+	}
+	.prayer-timing-list {
+
+	    background: $white-color;
+			position: relative;
+	    @include mobile-medium{
+				border-top: solid 1px $border-color;
+	    }
+		}
+}
+.table-responsive{
+	overflow-x: scroll !important;
+	width: 100% !important;
+	-webkit-overflow-scrolling: touch;
+}
+table.timing-table {
+	-webkit-overflow-scrolling: touch !important;
+	font-family: $roboto-condensed;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+		font-weight: 600;
+		color: $bluecolor;
+    margin-bottom: 0;
+		border:none;
+    th {
+    	text-align: center;
+    	font-size: 16px;
+    	color: $white-color;
+    	background: $border-color;
+    	text-transform: uppercase;
+			padding: 20px;
+			line-height: 100%;
+			span{
+				display: block;
+			}
+    	img{
+    		 vertical-align: middle;
+				 display: inline-block;
+				 @include mobile-small{
+					 display: none;
+				 };
+    	}
+
+			&.date{
+				background: #000000;
+			}
+			&.fajr{
+				background: #0e1a33;
+			}
+			&.dhuhr{
+				background: #edc277;
+			}
+			&.asr{
+				background: #fec558;
+			}
+			&.maghrib{
+				background: #083460;
+			}
+			&.isha{
+				background: #0a111e;
+			}
+	}
+	tr{
+		td{
+			&:first-child{
+				color: #000 !important;
+			}
+		}
+	}
+	&.table-bordered{
+		>tbody>tr>td{
+			border-color: $bluecolor;
+		}
+		>thead>tr>th{
+			border-color: $bluecolor;
+		}
+	}
+}

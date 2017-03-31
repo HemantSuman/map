@@ -1,0 +1,23 @@
+/*breadcrumb style
+=====================*/
+#breadcrumb-banner{
+	background: $breadbg;
+	//font-family: $roboto-condensed;
+	@include mobile-small{
+		//display: none;
+	}
+	.breadcrumb{
+		background: transparent;
+		margin-bottom: 0;
+		color: $breadcolor;
+		padding: 13px 0;
+	}
+	.breadcrumb>li+li:before{
+		content: "\f105";
+		font: normal normal normal 14px/1 FontAwesome;
+    	color: $solid-color;
+	}
+	.breadcrumb>.active{
+		color: $light-color;
+	}
+}

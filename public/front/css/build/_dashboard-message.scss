@@ -1,0 +1,877 @@
+.dashboard-banner{
+	background: #f7a591;
+	padding: 20px 0;
+	text-align: center;
+	border-bottom: 1px solid #ebe6e5;
+	@include mobile-medium{
+		margin: 0 15px;
+	};
+	.userImg{
+		border: 5px solid $orangecolor;
+		border-radius: 30px;
+		margin: 0 auto;
+		display: inline-block;
+		overflow: hidden;
+
+		img{
+			height: 165px;
+			width: auto;
+
+		}
+
+	}
+	.userStates{
+		margin-top: 15px;
+		select{
+
+			background: #35c93c url("../../img/icons/white-select-arrow.png") no-repeat scroll right 10px center;
+			border-radius: 6px;
+			border: 1px solid #35c93c;
+			color: #fff;
+			max-width: 170px;
+			width: 100%;
+		}
+	}
+
+		.Changepic{
+				position: relative;
+
+        .filetype{
+          opacity: 0;
+        }
+        label{
+          position: absolute;
+          top:0;
+          z-index: 9;
+          left:50%;
+          color: #4d4d4d;
+          cursor: pointer;
+					transform: translate(-50%,0);
+					-webkit-transform: translate(-50%,0);
+					-moz-transform: translate(-50%,0);
+        }
+			}
+
+}
+/*dasboard-content*/
+.dashboard-content{
+	padding: 45px 0;
+	//font-family: $roboto-condensed;
+	background: $white-color;
+	@include bp-large{
+		padding: 35px 0;
+	};
+	@include bp-small{
+		padding: 25px 0;
+	};
+	@include mobile-medium{
+		padding: 15px 0;
+	};
+	.container{
+		max-width: 1000px;
+		width: 100%;
+	}
+	.dashboarduserDetail{
+
+		border-bottom: 1px solid #d4d4d4;
+		.userName{
+			text-align:  center;
+			font-size: 30px;
+			font-weight: 600;
+			color: $orangecolor;
+			@include bp-small{
+				font-size: 26px;
+			};
+			@include mobile-medium{
+				font-size: 20px;
+			};
+			@include mobile-small{
+				font-size: 17px;
+			};
+		}
+
+		.aboutUser{
+			padding: 30px 0;
+			text-align: center;
+			@include bp-small{
+				padding: 15px 0;
+			};
+			@include mobile-medium{
+				padding: 10px 0;
+			};
+			@include mobile-small{
+				text-align: left;
+			};
+			li{
+				display: inline-block;
+				list-style: none;
+				vertical-align: middle;
+				font-size: 22px;
+				color: #4d4d4d;
+				margin: 0 40px;
+				@include bp-small{
+					margin: 0 20px;
+					font-size: 18px;
+				};
+				@include mobile-medium{
+					margin: 0 10px;
+					font-size: 15px;
+				};
+				@include mobile-small{
+					margin: 0 2px;
+					font-size: 12px;
+
+				};
+				@include mobile-view{
+					font-size: 11px;
+				};
+
+				span{
+					display: inline-block;
+					margin-right: 20px;
+					vertical-align: middle;
+					img{
+						height: 45px;
+						width: auto;
+						@include bp-small{
+							height: 30px;
+						};
+					}
+					@include mobile-small{
+						display: none;
+					};
+				}
+			}
+		}
+	}
+	.dashboardLink{
+		ul{
+			padding: 30px 0;
+			margin: 0;
+			text-align: center;
+			@include bp-small{
+				padding: 15px 0;
+			};
+			@include mobile-medium{
+				padding: 10px 0;
+				text-align: left;
+			};
+
+			li{
+				list-style: none;
+				display: inline-block;
+				a{
+					font-family:$roboto-condensed;
+					display: block;
+					color: #b3b3b3;
+					font-size:39px;
+					line-height: 100%;
+					padding: 11px 20px;
+					font-weight: 600;
+					text-transform: uppercase;
+					&.active{
+						color: $orangecolor;
+						border: 1px solid $orangecolor;
+					}
+					&:hover{
+						color: $orangecolor;
+					}
+					@include bp-small{
+						font-size: 26px;
+						padding: 10px;
+					};
+					@include mobile-medium{
+						font-size: 18px;
+						padding: 5px;
+					};
+					@include mobile-small{
+						font-size: 13px;
+						padding: 5px;
+						font-weight: 300;
+						text-transform: capitalize;
+					};
+
+				}
+
+			}
+		}
+	}
+	.dashboardData{
+		.hdercont{
+			padding-bottom: 25px;
+			@include mobile-medium{
+				padding-bottom: 10px;
+			}
+			.title{
+				display: inline-block;
+				@include mobile-medium{
+					margin-top: 5px;
+				};
+				h3{
+					color: #4d4d4d;
+					line-height: 100%;
+				}
+
+			}
+			.search{
+				max-width: 250px;
+				display: inline-block;
+				@include mobile-medium{
+					max-width: 200px;
+				};
+				.searchinput{
+					border: 1px solid #fac8bc;
+					display: inline-block;
+					max-width:190px;
+					height: 30px;
+					background: $white-color;
+					border:1px solid #fac8bc;
+					color: #4d4d4d;
+					box-shadow:none;
+					padding: 5px 10px;
+					vertical-align: middle;
+
+					@include mobile-medium{
+						max-width: 170px;
+					};
+				}
+				.searchbt{
+					height: 30px;
+					width: 32px;
+					display: inline-block;
+					margin-left: -5px;
+					background: $orangecolor url("../../img/search-icon.png") center center no-repeat;
+					border: none;
+					box-shadow: none;
+					background-size: 60%;
+					vertical-align: middle;
+					@include mobile-medium{
+						background-size: 20px auto;
+					};
+				}
+
+			}
+			.messageLinks{
+				display: inline-block;
+				@include mobile-medium{
+					display: none;
+				} ;
+				ul{
+					padding-left: 117px;
+					@include bp-small{
+						padding-left: 100px;
+					} ;
+					li{
+						list-style: none;
+						display: inline-block;
+						 margin: 0 30px;
+						 @include bp-small{
+	 					 	margin: 0 10px;
+	 					} ;
+						 a{
+							 text-transform: uppercase;
+							 color: #b3b3b3;
+							  font-size: 20px;
+								font-weight: 600;
+								@include bp-small{
+	 	 					 		font-size: 16px;
+	 	 					}
+							&.active{
+								color: $orangecolor;
+							}
+						 }
+					}
+				}
+			}
+		}
+		.DashboardTabWrap{
+			margin: 0 -15px;
+			.DashboardleftTab{
+				padding: 0 15px;
+				width: 25%;
+				display: inline-block;
+				float: left;
+				@include mobile-medium{
+					width: 100%;
+					text-align: left;
+				};
+
+				 li{
+					 display: block;
+					 margin-bottom: 10px;
+					 @include mobile-medium{
+						 display: inline-block;
+						 margin-bottom: 0;
+						 margin-right: 4px;
+					 };
+					 a{
+						 color: #4d4d4d;
+						 font-size: 18px;
+						 display: block;
+						 line-height: 100%;
+						 @include bp-small{
+							 font-size: 16px;
+						 };
+						 @include mobile-medium{
+							 font-size: 14px;
+						 };
+						 @include mobile-small{
+							font-size: 13px;
+						};
+						 &:hover{
+							 color: $orangecolor;
+						 }
+						 &.btn-orange{
+							 color: #fff;
+							 background: $orangecolor;
+							 max-width: 150px;
+							 text-align: center;
+							 font-weight: 600;
+							 padding: 7px 0;
+							 border-radius:4px;
+							 @include mobile-medium{
+								font-weight: 400;
+								padding: 5px;
+							};
+						 }
+					 }
+					/* &:first-child{
+						 margin-bottom: 30px;
+						 @include mobile-medium{
+							 margin-bottom: 0;
+						 };
+					 }*/
+					 &.active{
+						 	a{
+									 color: $orangecolor;
+							}
+
+					 }
+				 }
+			}
+			.tab-content{
+				width: 75%;
+				display: inline-block;
+				padding: 0 15px;
+				float: left;
+				@include mobile-medium{
+					width: 100%;
+				};
+				.Topbar{
+					 margin-bottom: 30px;
+					 @include mobile-medium{
+							display: none;
+					 };
+					ul{
+						padding: 0;
+						li{
+							list-style: none;
+							display: inline-block;
+							margin-right: 25px;
+							vertical-align: top;
+							font-size: 14px;
+							&:last-child{
+								margin-right: 0;
+							}
+							@include bp-small{
+								margin-right: 15px;
+							};
+							a{
+								display: inline-block;
+								padding: 5px 10px;
+								border: 1px solid #ebebeb;
+								position: relative;
+								min-width: 77px;
+								min-height: 30px;
+
+								text-align: center;
+
+							}
+							&.select{
+								input.m-checkbox{
+									 @extend %chk;
+								}
+							input.m-checkbox+label{
+								 @extend %chklabel;
+							}
+							input.m-checkbox:checked+label{
+								@extend  %chklabel1;
+							}
+							}
+							&.delete
+							{
+								a{
+									border: none;
+									min-width: 1px;
+									padding: 5px 0;
+									font-size: 20px;
+								}
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+.Messageblock{
+margin-bottom: 50px;
+@include bp-small{
+	margin-bottom: 25px;
+}
+@include mobile-medium{
+	margin-bottom: 15px;
+}
+	.row{
+		margin-left: -10px;
+		margin-right: -10px;
+		&.msgrow{
+			padding-top:10px;
+			padding-bottom: 10px;
+			border: 1px solid #ebebeb;
+		}
+		div[class*="col-"]{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	.firstBox{
+		padding: 0 0 0 10px;
+		@include bp-small{
+			padding: 0;
+		};
+		@include mobile-medium{
+			position: absolute;
+			top:15px;
+			left:20px;
+			z-index: 99;
+			width: 100%;
+		};
+
+		li{
+			list-style: none;
+			margin-right: 4px;
+			display: inline-block;
+			vertical-align: top;
+			@include bp-small{
+				margin-right: 2px;
+			};
+			&.chek{
+				cursor: pointer;
+				input.m-checkbox{
+					 @extend %chk;
+					 left:20px;
+					 @include mobile-medium{
+						 left:0;
+					 }
+				}
+			input.m-checkbox+label{
+				 @extend %chklabel;
+			}
+			input.m-checkbox:checked+label{
+				@extend  %chklabel1;
+			}
+
+			}
+			&.hert{
+				span{
+				display: block;
+				color: $orangecolor;
+				}
+
+			}
+		}
+
+	}
+	.msgImg{
+		img{
+			width: 80%;
+			height: auto;
+			@include bp-small{
+				width: 100%;
+			};
+		}
+		@include mobile-medium{
+			margin-bottom: 10px;
+		}
+	}
+	.msgData{
+		h3{
+			color: #4d4d4d;
+			//font-weight: 600;
+			margin-bottom: 7px;
+			font-family: $roboto-condensed;
+		}
+		p{
+			color: #000;
+			margin-bottom: 7px;
+
+		}
+		.clascat{
+			color: $orangecolor;
+			border: 1px solid $orangecolor;
+			padding: 5px;
+			display: inline-block;
+		}
+		ul{
+			padding: 0;
+			margin: 12px 0 0 0;
+			li{
+				list-style: none;
+			display: inline-block;
+			margin-right: 10px;
+			vertical-align: middle;
+			@include bp-small{
+				margin-right: 5px;
+			}
+			a{
+				color: #4d4d4d;
+				img{
+					height: 20px;
+					width: auto;
+					margin-right: 10px;
+					@include bp-small{
+						height: auto;
+						vertical-align: middle;
+						margin-right: 3px;
+					};
+				}
+			}
+
+			}
+		}
+	}
+	.msgRight{
+		padding-right: 10px;
+		text-align: right;
+		font-size: 13px;
+		ul{
+			padding: 0;
+			li{
+				list-style: none;
+				display: inline-block;
+				margin-right: 10px;
+				vertical-align: middle;
+				&:last-child{
+					margin-right: 0;
+				}
+				a{
+					color: #666666;
+					font-size: 16px;
+					display: block;
+				}
+			}
+			&.icons{
+				a{
+					font-size: 20px;
+					color: $orangecolor;
+					&:hover{ color: #666666}
+				}
+			}
+		}
+		span.price{
+			color: $orangecolor;
+			display: block;
+			margin: 30px 0;
+			@include mobile-medium{
+				margin: 5px 0;
+			}
+		}
+		span.date{
+			color: #b7b7b7;
+			display: block;
+		}
+
+	}
+	&.emailblock{
+		padding: 0 10px;
+		.firstBox{
+			li{
+				&.hert{
+					a{
+						span{
+							font-size: 26px;
+							color: #4d4d4d;
+							@include bp-small{
+								font-size: 18px;
+								 line-height: 100%;
+							};
+						}
+
+					}
+				}
+
+			}
+		}
+
+		.msgData{
+			ul{
+				margin-top: 20px;
+				@include mobile-medium{
+						margin-top: 7px;
+				};
+				li{
+					&.icon{
+						a{
+							//background: $orangecolor;
+							border-radius: 6px;
+							padding: 2px;
+							display: block;
+							overflow: hidden;
+							img{
+								height: 42px;
+								width: auto;
+								margin-right: 0;
+
+							}
+						}
+					}
+					&.desc{
+						span{
+							color: #000;
+						}
+						p{
+							color: #b7b7b7;
+						}
+					}
+				}
+			}
+		}
+		.msgRight{
+			@include mobile-medium{
+				text-align: left;
+			};
+			span{
+				display: block;
+				margin-bottom: 10px;
+				color: #b7b7b7;
+				@include mobile-medium{
+						margin-top: 5px;
+						margin-bottom: 0;
+				};
+			}
+		}
+	}
+	&.manageads{
+		padding: 0 10px ;
+	}
+}
+
+
+
+
+
+/*message detail*/
+.MessageDeatil{
+	padding: 10px;
+	border:1px solid #ebebeb;
+	.topmsgdetail{
+		margin-bottom: 20px;
+		@include mobile-medium{
+			margin-bottom: 10px;
+		};
+		.topmsgdetailleft{
+			img{
+				width: 100%;
+				height: auto;
+				@include mobile-medium{
+					width: 100%;
+				};
+			}
+		}
+		.topmsgdetailright{
+			border-bottom: 1px solid #d3d3d3;
+			min-height: 157px;
+			@include bp-small{
+				height: 115px;
+			};
+			@include mobile-medium{
+				height: auto;
+				border-bottom: none;
+				margin-top: 10px;
+			};
+			.desc{
+				float: left;
+			}
+			.price{
+				float: right;
+				color: $orangecolor;
+			}
+		}
+	}
+	.chatWrapleft{
+		padding: 0;
+		@include mobile-medium{
+		border-bottom: 1px solid #d3d3d3;
+		display: none;
+	}
+			li{
+				list-style: none;
+				display: block;
+				margin: 5px 0;
+				text-align: center;
+				@include mobile-medium{
+					text-align: left;
+				};
+				&.classcat{
+					a{
+						border: 1px solid $orangecolor;
+						color: $orangecolor;
+						display: inline-block;padding: 5px;
+					}
+				}
+			}
+
+	}
+	.chatboxInner{
+
+		margin-bottom:15px;
+		padding-bottom: 15px;
+		/*height: 300px; max-height: 300px;*/
+	}
+	.chatbox{
+		height: 300px;
+		max-height: 300px;
+		//	overflow: auto;
+	.chatmsg{
+		margin-bottom: 10px;
+		> div{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.icon{
+			padding-right: 35px;
+			vertical-align: top;
+			margin-top: 7px;
+			@include bp-small{
+				padding-right: 25px;
+			}
+			@include mobile-small{
+				display: none;
+			}
+			a{
+				display: block;
+				//background: $orangecolor;
+				padding: 2px;
+				text-align: center;
+				border-radius: 6px;
+				overflow: hidden;
+				img{
+					height: 45px;
+					width: auto;
+
+				}
+			}
+		}
+		.msgtxt{
+			background: #f2f2f2;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 16px;
+			position: relative;
+			max-width: 310px;
+			font-size: 14px;
+			@include bp-small{
+				max-width: 225px;
+			}
+			@include mobile-medium{
+				max-width: 75%;
+				font-size: 12px;
+			}
+			@include mobile-small{
+				max-width: 100%;
+			}
+
+			span{
+				color: #c1c1c1;
+				display: block;
+				margin-top: 5px;
+			}
+			&:before{
+				background: url(../../img/icons/chatarrow.png) 0 1px no-repeat;
+				position: absolute;
+				left: -20px;
+				height: 26px;
+				width: 20px;
+			//	transform:translate(0,-50%);
+				//margin-top: -10px;
+				content: '';
+				top:2px
+			}
+		}
+		.chattime{
+			color: #c1c1c1;
+			padding-left: 25px;
+			text-transform: lowercase;
+			@include bp-small{
+					padding-left: 8px;
+			};
+		}
+		&.withouticonmsg{
+			margin-left: 100px;
+			text-align: right;
+			@include bp-small{
+					margin-left: 75px;
+			};
+			@include mobile-small{
+				margin-left: 0;
+				text-align: right;
+			};
+			.msgtxt{
+			background: #ebf8fc;
+			&:before{
+				display: none;
+			}
+			}
+				.chattime{
+					padding-left: 10px;
+				}
+		}
+	}
+	.mCSB_inside > .mCSB_container{
+		margin-right: 20px !important;
+	}
+	.mCSB_scrollTools{
+		width: 6px !important;
+	}
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{border-radius: 0px;}
+	.mCSB_draggerRail{border-radius: 0px;}
+}
+.sendmsgWrp{
+	border-top: 1px solid #d2d2d2;
+	padding-top: 10px;
+	max-width: 480px;
+	@include mobile-small{
+		max-width: 100%;
+	};
+}
+	.sendmsg{
+	background: $orangecolor;
+	border-radius: 20px;
+	max-width: 480px;
+	padding: 4px;
+	input{
+		display: inline-block;
+		vertical-align: middle;
+		&.form-control{
+			border-radius: 20px;
+			background: #fff;
+			border: none;
+			box-sahdow:none;
+			width: 85%;
+			display: inline-block;
+
+		}
+		&.btn{
+			background: none;
+			border: none;
+			box-shadow:none;
+			width: 14%;
+			text-align: center;
+			color: #fff;
+		}
+	}
+}
+}

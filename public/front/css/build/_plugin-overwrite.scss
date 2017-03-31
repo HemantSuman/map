@@ -1,0 +1,98 @@
+/*plugin overwite css
+============================*/
+
+#select-category.dd-container, #select-category.dd-container>*{
+	width: 100% !important;
+	border: 0;
+    border-radius: 0;
+    background: #fff !important;
+}
+#select-category .dd-selected{
+	padding: 0 20px !important;
+	color: #525252;
+    line-height: 60px;
+}
+#select-category .dd-option-image, #select-category .dd-selected-image{
+	float: none !important;
+	margin-right: 15px !important;
+}
+#select-category .dd-option{
+	padding: 10px 20px !important;
+}
+#select-category .dd-options{
+	max-height: 216px !important;
+}
+#select-category .dd-option label{
+	font-weight: normal !important;
+	line-height: normal !important;
+}
+#select-category .dd-selected label{
+	font-weight: normal !important;
+}
+
+
+.search-section .dd-container, .search-section .dd-container>*{width: 100% !important;}
+.search-section .dd-container>div.dd-select{background: #f6f6f6 !important; border-color: #ebebeb;}
+.search-section .dd-container .dd-selected{padding: 8px 10px; color: #a4a4a4; font-size: 13px;}
+.search-section .dd-container .dd-pointer{ border: 0 !important; background: url(../../img/select-arrow.png) no-repeat center; width: 12px;height: 6px;}
+.search-section .dd-container .dd-pointer.dd-pointer-up{border: 0 !important; transform: rotateX(-180deg); margin-top: 0 !important}
+.search-section .dd-container label{font-weight: normal; text-transform: capitalize;}
+.search-section .dd-container .dd-option{padding: 5px 10px; font-size: 12px;}
+.search-section .dd-container .dd-options{max-height: 150px; z-index: 9;}
+
+
+.select-options {display: inline-block; float: left;}
+.select-options .dd-container{display: inline-block; margin-left: 5px;}
+.select-options .dd-container, .select-options .dd-container>*{ width: 130px !important;}
+.select-options .dd-container>div.dd-select{background: #ebebeb !important; border-color: #d7d7d7; border-radius: 0 !important;}
+.select-options .dd-container .dd-selected{padding: 6px 10px; color: #181818; font-size: 13px;}
+.select-options .dd-container .dd-pointer{ border: 0 !important; background: url(../../img/select-arrow.png) no-repeat center; width: 12px;height: 6px;}
+.select-options .dd-container .dd-pointer.dd-pointer-up{border: 0 !important; transform: rotateX(-180deg); margin-top: 0 !important}
+.select-options .dd-container label{font-weight: normal; text-transform: capitalize;}
+.select-options .dd-container .dd-option{padding: 5px 10px; font-size: 12px;}
+.select-options .dd-container .dd-options{max-height: 150px; z-index: 9;}
+
+
+.value-field .dd-pointer{ border: 0 !important; background: url(../../img/select-arrow.png) no-repeat center; width: 12px;height: 6px;}
+.value-field .dd-pointer.dd-pointer-up{border: 0 !important; transform: rotateX(-180deg); margin-top: 0 !important}
+
+
+/*datepicker css overidden*/
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+    background: $green-color !important;
+    border-color: $green-color !important;
+    color: $white-color !important;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+	 background: $blue-color !important;
+    border-color: $blue-color !important;
+    color: $white-color !important;
+}
+
+
+
+.bx-wrapper .bx-viewport{left: 0; box-shadow: none; border: 0;}
+.bx-wrapper{margin: 0; }
+.bx-wrapper img{ width: 100%; }
+div#bx-pager {text-align: center; }
+div#bx-pager a{display: inline-block; background: $black-color;}
+div#bx-pager a img {
+	height: 100px;
+	width: 100px;
+	opacity: 0.5;
+	@include bp-small{
+		width: 70px;
+		height: 70px;
+	}
+}
+div#bx-pager a.active img {opacity: 1;}
+/* new-cscs*/
+.ui-front{ z-index: 1000	;}
+.pac-container{z-index: 1000 !important; min-width: 200px !important}
+
+.toggle.btn.ios{ min-height: 1px !important;height: 25px !important; padding: 1px 12px !important;}
+.toggle label.btn{ padding: 1px 12px !important;}
+.toggle.btn.ios.btn-primary { background: $orangecolor; border-color: $orangecolor}
+.toggle.btn.ios .btn-primary { background: $orangecolor; border-color: $orangecolor}
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+.toggle.ios .toggle-handle { border-radius: 20px; }

@@ -1,0 +1,212 @@
+/*main-inner-section style
+=====================*/
+#main-inner-section{
+	background: $white-color;
+	padding: 20px 0 50px 0;
+	@include bp-medium{
+		padding: 30px 0;
+	}
+	@include bp-small{
+		padding: 15px 0;
+	}
+	@include mobile-medium{
+		background: $white-color;
+		padding: 5px 0;
+	}
+}
+#left-section{
+	//padding-top: 10px;
+	@include mobile-medium{
+			//padding-top: 10px;
+	};
+}
+#mosque-list-view{
+		.top-section{
+			.title{
+				h1{
+					color: $bluecolor;
+				}
+			}
+			.top-titile{
+				.savesearch-link{
+					color: $bluecolor;
+				}
+			}
+			.view-type{
+				.list_view{
+					&.active{
+						a{
+							 background: url(../../img/icons/blue-list.png) 0 0 no-repeat;
+							 background-size: cover;
+						}
+
+					}
+				}
+			}
+			.grid_view{
+					&.active{
+					 a{
+						 background: url(../../img/icons/blue-grid.png) 0 0 no-repeat;
+						background-size: cover;
+					}
+
+				 }
+			}
+
+		}
+		.grid-item{
+			.listing-inner{
+				width: 100%;
+				background: $white-color;
+				border: 1px solid #c2c3c8;
+				position: relative;
+				margin: 0 0 20px 0;
+				border-radius: 8px;
+				overflow: hidden;
+				img{
+					width: 100%;
+					height: auto;
+					@include transition(all ease 0.5s);
+
+				}
+				.p-description{
+					padding: 10px 15px 20px;
+
+					>div.category-name{
+						font-size: 18px;
+						font-weight: bold;
+						@include bp-medium {
+							font-size: 16px;
+						}
+
+					}
+
+				}
+				&:hover{
+					.p-img{
+						background: $black-color;
+						img{
+							opacity: 0.2;
+						}
+					}
+				}
+			}
+		}
+		.grid-view-listing{
+			.row{
+				margin-left: -10px;
+				margin-right: -10px;
+			}
+			.grid-item{
+				padding-left: 10px;
+				padding-right: 10px;
+				@include bp-small {
+					width: 50%;
+					float: left;
+				}
+				@include mobile-small {
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+			}
+		}
+}
+
+	.mosque-row{
+		.pull-right{
+			@include mobile-small{
+				float: none !important;
+			};
+
+		}
+		.list-data{
+			border-right: none;
+		}
+		.list-img{
+			text-align: right;
+			@include mobile-small{
+				text-align: left;
+				margin-bottom: 10px;
+
+			};
+			img{
+				@include mobile-small{
+					width: 100%;
+				}
+			}
+		}
+	}
+
+.grid-view{
+	.list-row.mosque-row{
+		width: 49%;
+		float: left;
+		display: inline-block;
+		margin-right: 2%;
+		padding-top: 0;
+		border-radius:8px;
+		overflow: hidden;
+		&:nth-child(even){
+			margin-right: 0;
+		}
+		.col-md-6.col-sm-6{
+			width: 100%;
+			padding: 0
+		}
+		.pull-right{
+			float: none;
+		}
+		.list-img{
+			img{
+				width: 100%;
+				height: auto;
+				@include transition(all ease 0.5s);
+
+			}
+
+		}
+		.list-data{
+			border-right:none;
+			padding: 10px 10px 0 10px;
+		}
+		&:hover{
+			.list-img{
+				background: $black-color;
+				img{
+					opacity: 0.2;
+				}
+			}
+		}
+	}
+}
+
+
+.pagination{
+	font-family: $roboto-condensed;
+	margin: 10px auto;
+	display: table;
+	border-radius: 0;
+	li.active{
+		a{
+			background: $white-color;
+			color: $orangecolor;
+			border: 1px solid #e7e7e7;
+		}
+
+	}
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span{
+	border-radius: 0;
+}
+.pagination>li>a, .pagination>li>span{
+	color: $solid-color;
+	padding: 4px 8px;
+	margin-right: 3px;
+	@include mobile-small{
+		padding: 3px 4px;
+		font-size: 13px;
+	}
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+	color: $orangecolor;
+}
